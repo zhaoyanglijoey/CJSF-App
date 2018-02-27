@@ -1,4 +1,5 @@
 {
-  "name": "sample",
-  "displayName": "sample"
+  "expo": {
+    "sdkVersion": "25.0.0"
+  }
 }
