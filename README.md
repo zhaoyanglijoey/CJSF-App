@@ -21,4 +21,4 @@
 
 ##### Handy shortcuts:
 ------
-- Press <kbd>ctrl<kbd> +<kbd> M <kbd> for Opening emmultor options (Hot reloding, debuging) for android
+- Press <kbd>ctrl</kbd> +<kbd> M </kbd> for Opening emmultor options (Hot reloding, debuging) for android
