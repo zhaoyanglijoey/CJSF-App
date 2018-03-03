@@ -3,6 +3,15 @@
 
     <item
         is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-1.3.0_53d75ed8193d6235608b11214ecafe3457eadd00.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -12,12 +21,138 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_4314515af33299e0d4bd441eea0f4437f3a277a4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_9961000df0b3c8c3d8d8e36755566bf528bac4d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.1_168288e84f2ece488358929ebaacf98ab85e00b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.52.0\jars\libs\infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_66f91b4a1ca24690918019c52bcfd93220088796.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\okhttp-3.6.0_3c4c600712738bac25ee18a247dd3b2dd70aec83.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-1.3.0_1b3530fbddbc96e4e022ba482a497e12ed341d0f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-okhttp3\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-okhttp3-1.3.0_e0ee3bdac06bfaa1dd9c4b3488a021628eb5e78d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.52.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="af61eb11ffb4296cab0c93218248a3dfcec0a84c">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.52.0_a6e7acc3c3150599b90f197c88ed5464b6520b0d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fresco\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fresco-1.3.0_ee109c4985e6e34a719770de2ab6a9d097149d2c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.3.0_53f0d202bdc83795f330ddf5ef2412aa06dcc3d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_c1fa952f887f2a341c7ac31c30014866abd60ef3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_6f1d5e7ccbb1922ef2a257f95c0d620b30b9d4e9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_b20cbd858d3a61df2ec8356e9110524047761d3f.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.6.0\3f9b16b774f2c36cfd86dd2053d0b3059531dacc\okhttp-urlconnection-3.6.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
         <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.6.0_e1636b18724b0a069b29c6cb8c9915b9dfd5b4da.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1_8d36083ec6171af13033d3428912de7792bb62a9.jar" />
     </item>
     <item
         is-multidex="false"
@@ -36,15 +171,6 @@
         revision="23.0.1"
         sha1="f162442a19fff13995fbd51ba414d9ee05579080">
         <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_02e2c7b426e5f63c5d3544a33a63dfa48ff79bba.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
-        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_4314515af33299e0d4bd441eea0f4437f3a277a4.jar" />
     </item>
     <item
         is-multidex="false"
@@ -93,12 +219,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\1.3.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_9961000df0b3c8c3d8d8e36755566bf528bac4d5.jar" />
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-1.3.0_20af198bc58bda5e13ca2ad81a7167d0eb5e8bd7.jar" />
     </item>
     <item
         is-multidex="false"
@@ -111,6 +237,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.1_726ac7def4b552861dae0d4c9a7305224977d636.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-okhttp3\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-okhttp3-1.3.0_48f3c219ac6b1e8506dd9c7a72fab17a6233a4bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.52.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -120,30 +264,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
-        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\okhttp-3.6.0_3c4c600712738bac25ee18a247dd3b2dd70aec83.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-okhttp3\1.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
-        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-okhttp3-1.3.0_e0ee3bdac06bfaa1dd9c4b3488a021628eb5e78d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_c1fa952f887f2a341c7ac31c30014866abd60ef3.jar" />
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_2d7ee352a7877c58d774e69e6ffbb83078eb78bb.jar" />
     </item>
     <item
         is-multidex="false"
@@ -156,21 +282,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Yagnik\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.fbui.textlayoutbuilder\textlayoutbuilder\1.0.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_6f1d5e7ccbb1922ef2a257f95c0d620b30b9d4e9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
-        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSF\android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_b20cbd858d3a61df2ec8356e9110524047761d3f.jar" />
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_c8b2f6d8aa20ec005af088292d21a9b3d3c7e0eb.jar" />
     </item>
     <item
         is-multidex="false"

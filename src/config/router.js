@@ -22,4 +22,15 @@ export const Tabs = TabNavigator({
             tabBarIcon : ({tintColor}) => <Icon name='star' />
         }
     }
-});
+},
+{
+    tabBarPosition: 'bottom',
+    animationEnabled: true,
+    configureTransition: (currentTransitionProps,nextTransitionProps) => ({
+      timing: Animated.spring,
+      tension: 1,
+      friction: 35,
+    }),
+    swipeEnabled: false,
+  }
+);
