@@ -1,4 +1,3 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
-
-AppRegistry.registerComponent('sample', () => App);
+import App from './src/App';
+AppRegistry.registerComponent('CJSF', () => App);
