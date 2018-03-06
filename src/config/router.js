@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet} from 'react-native';
+import { Text, View, Image, StyleSheet, Platform} from 'react-native';
 import { TabNavigator } from 'react-navigation';
 import { Container, Header, Content, Icon } from 'native-base';
 
@@ -7,7 +7,7 @@ import { Container, Header, Content, Icon } from 'native-base';
 import Home  from '../screens/Home';
 import Favorites  from '../screens/Favorites';
 import Scheduale from '../screens/Scheduale';
-import Chat from '../screens/Chat';
+import About from '../screens/About';
 
 export const Tabs = TabNavigator({
     Home: {
@@ -31,11 +31,11 @@ export const Tabs = TabNavigator({
             tabBarIcon: ({ tintColor }) =><Icon name='calendar' style={navIconStyles.container}/>,
         }
     },
-    Chat: {
-        screen : Chat,
+    About: {
+        screen : About,
         navigationOptions:{
-            tabBarLabel: 'Chat',
-            tabBarIcon: ({ tintColor }) =><Icon name='chatboxes' style={navIconStyles.container}/>,
+            tabBarLabel: 'About',
+            tabBarIcon: ({ tintColor }) =><Icon name='information-circle' style={navIconStyles.container}/>,
         }
     }
 },
@@ -46,7 +46,7 @@ export const Tabs = TabNavigator({
          labelStyle: {
             fontSize: 12,
             margin: 0,
-        },    
+        },
     },
     animationEnabled: true,
     configureTransition: (currentTransitionProps,nextTransitionProps) => ({
@@ -55,13 +55,13 @@ export const Tabs = TabNavigator({
       friction: 35,
     }),
     swipeEnabled: false,
-  }
+  },
 );
 
 
 //Styles fot the bottom nav bad icons
 var navIconStyles = StyleSheet.create({
     container: {
-      color: 'white',
+      color: Platform.OS === 'ios' ? 'cornflowerblue': 'white',
     }
   });

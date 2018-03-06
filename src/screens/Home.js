@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Platform} from 'react-native';
 import { Container, Header, Content, Icon } from 'native-base';
 
 export default class Home extends React.Component {
@@ -22,5 +22,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: Platform.OS === 'ios' ?  24 : 0,
   },
 });
