@@ -51,6 +51,7 @@ const FavoritesStack = StackNavigator({
             headerTitle: 'Favorites',
             headerStyle: styles.mainHeader,
             headerTitleStyle : styles.headerTitle,
+            headerRight: (<View></View>)
         }
     }
 });
@@ -62,6 +63,7 @@ const SchedualeStack = StackNavigator({
             headerTitle: 'Scheduale',
             headerStyle: styles.mainHeader,
             headerTitleStyle : styles.headerTitle,
+            headerRight: (<View></View>)
         }
     }
 });
@@ -73,6 +75,7 @@ const AboutStack = StackNavigator({
             headerTitle: 'About',
             headerStyle: styles.mainHeader,
             headerTitleStyle : styles.headerTitle,
+            headerRight: (<View></View>)
         }
     }
 });
