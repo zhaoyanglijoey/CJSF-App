@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, Platform, Image, Linking} from 'react-native';
 import { Container, Header, Content, Icon } from 'native-base';
 import { LOGO, LOGO_HEIGHT, LOGO_WIDTH, CJSF_URL, ABOUT_HEADER1,
-ABOUT_BODY1, ABOUT_HEADER2, ABOUT_BODY2_1, ABOUT_BODY2_2, ABOUT_BODY3,
-TEXT_SIZE_BODY, TEXT_SIZE_HEADER, IOS_STATUS_BAR}from '../config/constants.js';
+ABOUT_BODY1, ABOUT_HEADER2, ABOUT_BODY2, ABOUT_BODY3,
+TEXT_SIZE_BODY, TEXT_SIZE_HEADER, IOS_STATUS_BAR} from '../config/constants.js';
 
 export default class Schedule extends React.Component {
   render() {
@@ -17,11 +17,7 @@ export default class Schedule extends React.Component {
         <Text style={styles.header}>{ABOUT_HEADER1}</Text>
         <Text style={styles.body}>{ABOUT_BODY1}</Text>
         <Text style={styles.header}>{ABOUT_HEADER2}</Text>
-        <Text style={styles.body}>{ABOUT_BODY2_1}
-          <Text style={{color: 'cornflowerblue'}}
-            onPress={() => {Linking.openURL(CJSF_URL)}}> www.cjsf.ca </Text>
-          <Text>{ABOUT_BODY2_2}</Text>
-        </Text>
+        <Text style={styles.body}>{ABOUT_BODY2}</Text>
         <Text style={styles.body}>{ABOUT_BODY3}</Text>
       </View>
     );
@@ -35,7 +31,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: Platform.OS === 'ios' ? IOS_STATUS_BAR : 0,
   },
   logo: {
     width: LOGO_HEIGHT,

@@ -1,6 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\Yagnik\\Desktop\\Git\\cjsf\\GitLab\\CJSFApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
-        "source": "C:\\Users\\Yagnik\\Desktop\\Git\\cjsf\\GitLab\\CJSFApp\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "/Users/ahad/Downloads/CJSF/CJSFApp/android/C:\\Users\\Yagnik\\Desktop\\Git\\cjsf\\GitLab\\CJSFApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "/Users/ahad/Downloads/CJSF/CJSFApp/android/C:\\Users\\Yagnik\\Desktop\\Git\\cjsf\\GitLab\\CJSFApp\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "/Users/ahad/Downloads/CJSF/CJSFApp/android/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
+        "source": "/Users/ahad/Downloads/CJSF/CJSFApp/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     }
 ]
