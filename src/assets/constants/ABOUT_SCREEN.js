@@ -3,13 +3,12 @@ import { Text } from 'react-native';
 
 /* Constant resources used by the application */
 // Text and Constants for About Screen //
-export const LOGO = require('../../res/assets/ic_launcher-web.png');
+export const LOGO = require('../../../res/assets/ic_launcher-web.png');
 export const LOGO_HEIGHT = 260;
 export const LOGO_WIDTH = 260;
 
 export const TEXT_SIZE_HEADER=14;
 export const TEXT_SIZE_BODY=12;
-export const IOS_STATUS_BAR=24;
 
 export const ABOUT_HEADER1='Diverse * Independent * Yours'
 export const ABOUT_BODY1='CJSF 90.1 FM is Vancouver’s independent indie music, '

@@ -1,18 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, Platform, Image, Linking} from 'react-native';
 import { Container, Header, Content, Icon } from 'native-base';
-import { LOGO, LOGO_HEIGHT, LOGO_WIDTH, CJSF_URL, ABOUT_HEADER1,
-ABOUT_BODY1, ABOUT_HEADER2, ABOUT_BODY2, ABOUT_BODY3,
-TEXT_SIZE_BODY, TEXT_SIZE_HEADER, IOS_STATUS_BAR} from '../config/constants.js';
+import { ABOUT_BODY1, ABOUT_HEADER1, ABOUT_HEADER2, ABOUT_BODY2, ABOUT_BODY3,
+LOGO, LOGO_HEIGHT, LOGO_WIDTH, CJSF_URL, TEXT_SIZE_BODY, TEXT_SIZE_HEADER,}
+from '../assets/constants/ABOUT_SCREEN.js';
 
 export default class Schedule extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>About tab</Text>
-        <Content>
-            <Icon name='information-circle'/>
-        </Content>
         <Image source={LOGO} style={styles.logo}/>
         <Text style={styles.header}>{ABOUT_HEADER1}</Text>
         <Text style={styles.body}>{ABOUT_BODY1}</Text>
