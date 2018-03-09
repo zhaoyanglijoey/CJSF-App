@@ -12,12 +12,12 @@ import About from '../screens/About';
 //Styles fot the bottom nav bad icons
 var styles = StyleSheet.create({
     container: {
-      
+
     },
-    mainHeader: {        
+    mainHeader: {
         //paddingTop: (Platform.OS === 'android') ? Expo.Constants.statusBarHeight : 20,
         //height: ( (Platform.OS === 'android') ? 56 : 44 ) + Expo.Constants.statusBarHeight
-    
+
     },
     headerTitle: {
         alignSelf:'center',
@@ -28,7 +28,7 @@ var styles = StyleSheet.create({
 
 var navIconStyles = StyleSheet.create({
     container: {
-      
+
     }
 });
 
@@ -45,7 +45,7 @@ const HomeStack = StackNavigator({
 });
 
 const FavoritesStack = StackNavigator({
-    Favorites: {    
+    Favorites: {
         screen: Favorites,
         navigationOptions: {
             headerTitle: 'Favorites',
@@ -105,8 +105,8 @@ export const Tabs = TabNavigator({
     About: {
         screen : AboutStack,
         navigationOptions:{
-            tabBarLabel: 'AboutStack',
-            tabBarIcon: ({ tintColor }) =><Icon name='chatboxes' style={navIconStyles.container}/>,
+            tabBarLabel: 'About',
+            tabBarIcon: ({ tintColor }) =><Icon name='information-circle' style={navIconStyles.container}/>,
         }
     }
 },
@@ -117,7 +117,7 @@ export const Tabs = TabNavigator({
          labelStyle: {
             fontSize: 12,
             margin: 0,
-        },    
+        },
     },
     navigationOptions: {
         header: {
@@ -131,8 +131,13 @@ export const Tabs = TabNavigator({
       friction: 35,
     }),
     swipeEnabled: false,
-  }
+  },
 );
 
 
-
+//Styles fot the bottom nav bad icons
+var navIconStyles = StyleSheet.create({
+    container: {
+      color: Platform.OS === 'ios' ? 'cornflowerblue': 'white',
+    }
+  });
