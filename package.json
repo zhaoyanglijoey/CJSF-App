@@ -17,13 +17,17 @@
     "preset": "react-native"
   },
   "dependencies": {
+    "@expo/react-native-action-sheet": "^1.0.2",
     "native-base": "^2.3.9",
     "react": "16.2.0",
     "react-native": "0.52.0",
     "react-native-accordions": "^1.0.3",
     "react-native-audio-toolkit": "^1.0.6",
     "react-native-collapsible": "^0.10.0",
+    "react-native-event-listeners": "^1.0.3",
+    "react-native-eventemitter": "0.0.1",
     "react-native-scrollable-tab-view": "^0.8.0",
+    "react-native-storage": "^0.2.2",
     "react-native-vector-icons": "^4.5.0",
     "react-navigation": "^1.3.2"
   }

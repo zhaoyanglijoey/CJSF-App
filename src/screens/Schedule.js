@@ -1,36 +1,13 @@
 import React from "react";
 
-import {
-  StyleSheet,
-  View,
-  FlatList,
-  ActivityIndicator,
-  TouchableOpacity,
-  Alert,
-  ScrollView
-} from "react-native";
-import {
-  Container,
-  Text,
-  Header,
-  Toast,
-  Content,
-  Button,
-  Icon,
-  List,
-  ListItem,
-  Left,
-  Body,
-  Right,
-  Tab,
-  Tabs,
-  Root,
-  ActionSheet
-} from "native-base";
-import ScrollableTabView, {
-  ScrollableTabBar
-} from "react-native-scrollable-tab-view";
+import { StyleSheet, View, ActivityIndicator, TouchableOpacity, Alert, ScrollView, AsyncStorage, } from "react-native";
+import { Container, Text, Header, Toast, Content, Button, Icon, List, ListItem,
+         Left, Body, Right, Tab, Tabs, Root, ActionSheet, } from "native-base";
+import ScrollableTabView, { ScrollableTabBar} from "react-native-scrollable-tab-view";
+import { ActionSheetProvider, connectActionSheet } from '@expo/react-native-action-sheet';
+import { EventRegister } from 'react-native-event-listeners'
 
+@connectActionSheet
 export default class Schedule extends React.Component {
   constructor(props) {
     super(props);
@@ -53,26 +30,41 @@ export default class Schedule extends React.Component {
   }
   _options = ["Details", "Add to favorite", "Cancel"];
 
-  _onPressEntry = item =>
-    ActionSheet.show(
+  _addFavorite = item => {
+    AsyncStorage.setItem(item.program_id, JSON.stringify(item))
+    .then(
+      () => {
+        Alert.alert(item.title + ' added to favorite');
+        // Toast.show({
+        //   text: item.title + ' added to favorite',
+        // });
+        EventRegister.emit('favoriteUpdate', 'add worked!!');
+      }
+    ).catch(
+      error => {
+        console.warn(error);
+      }
+    )
+  }
+
+  _onPressEntry = item => {
+    this.props.showActionSheetWithOptions(
       {
         options: this._options,
         cancelButtonIndex: 2,
-        title: item.title
+        // title: item.title
       },
       buttonIndex => {
         if (buttonIndex === 0) {
           Alert.alert(item.title, item.description);
         }
         if (buttonIndex === 1) {
-          Toast.show({
-            text: "Added to favorite",
-            position: "bottom"
-          });
+          this._addFavorite(item);
         }
       }
     );
-
+  }
+  
   _renderItem = item => (
     <ListItem style={styles.listItem}>
       <Body>
@@ -93,15 +85,18 @@ export default class Schedule extends React.Component {
     if (this.state.isLoading) {
       return (
         <View style={{
+          flex: 1,
           alignItems: 'center',
-          justifyContent: 'center',}}>
-          <ActivityIndicator />
+          justifyContent: 'center',
+          }}>
+          <ActivityIndicator 
+            size = 'large'
+          />
         </View>
       );
     }
 
     return (
-      <Root>
         <View style={styles.container}>
           <Tabs renderTabBar={() => <ScrollableTabBar />}>
             <Tab heading="Sun">
@@ -148,7 +143,6 @@ export default class Schedule extends React.Component {
             </Tab>
           </Tabs>
         </View>
-      </Root>
     );
   }
 }
