@@ -6,7 +6,7 @@ import { Container, Header, Content, Icon } from 'native-base';
 
 import Home  from '../screens/Home';
 import Favorites  from '../screens/Favorites';
-import Scheduale from '../screens/Scheduale';
+import Schedule from '../screens/Schedule';
 import About from '../screens/About';
 
 //Styles fot the bottom nav bad icons
@@ -56,11 +56,11 @@ const FavoritesStack = StackNavigator({
     }
 });
 
-const SchedualeStack = StackNavigator({
-    Scheduale: {
-        screen: Scheduale,
+const ScheduleStack = StackNavigator({
+    Schedule: {
+        screen: Schedule,
         navigationOptions: {
-            headerTitle: 'Scheduale',
+            headerTitle: 'Schedule',
             headerStyle: styles.mainHeader,
             headerTitleStyle : styles.headerTitle,
             headerRight: (<View></View>)
@@ -95,8 +95,8 @@ export const Tabs = TabNavigator({
             tabBarIcon: ({ tintColor }) =><Icon name='star' style={navIconStyles.container}/>,
         }
     },
-    Scheduale: {
-        screen : SchedualeStack,
+    Schedule: {
+        screen : ScheduleStack,
         navigationOptions:{
             tabBarLabel: 'Schedule',
             tabBarIcon: ({ tintColor }) =><Icon name='calendar' style={navIconStyles.container}/>,
