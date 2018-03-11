@@ -4,6 +4,7 @@ import { StyleSheet, View, Platform, AsyncStorage, ActivityIndicator, Alert } fr
 import { Container, Text, Header, Content, Icon, List, ListItem, Toast, Root, ActionSheet, Left, Body, Right, Button } from 'native-base';
 import { ActionSheetProvider, connectActionSheet } from '@expo/react-native-action-sheet';
 import { EventRegister } from 'react-native-event-listeners'
+import PushNotification from 'react-native-push-notification'
 
 @connectActionSheet
 export default class Favorites extends React.Component {
@@ -75,15 +76,14 @@ export default class Favorites extends React.Component {
         }
         if (buttonIndex === 1) {
           AsyncStorage.removeItem(item.program_id)
-          .then( () => {
-
-          }).then(() => {
+          .then(() => {
+            PushNotification.cancelLocalNotifications({id: item.program_id});
             this._updateContent()
           })
           .catch(error => {
             console.warn(error);
           })
-        }
+        } 
       }
     )
   }
