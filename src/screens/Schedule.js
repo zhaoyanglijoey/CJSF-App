@@ -1,11 +1,14 @@
 import React from "react";
 
-import { StyleSheet, View, ActivityIndicator, TouchableOpacity, Alert, ScrollView, AsyncStorage, } from "react-native";
+import { StyleSheet, View, ActivityIndicator, TouchableOpacity, Alert, ScrollView, AsyncStorage, PushNotificationIOS } from "react-native";
 import { Container, Text, Header, Toast, Content, Button, Icon, List, ListItem,
          Left, Body, Right, Tab, Tabs, Root, ActionSheet, } from "native-base";
 import ScrollableTabView, { ScrollableTabBar} from "react-native-scrollable-tab-view";
 import { ActionSheetProvider, connectActionSheet } from '@expo/react-native-action-sheet';
 import { EventRegister } from 'react-native-event-listeners'
+import { pushNotifications } from '../services';
+import PushNotification from 'react-native-push-notification'
+
 
 @connectActionSheet
 export default class Schedule extends React.Component {
@@ -34,10 +37,41 @@ export default class Schedule extends React.Component {
     AsyncStorage.setItem(item.program_id, JSON.stringify(item))
     .then(
       () => {
-        Alert.alert(item.title + ' added to favorite');
-        // Toast.show({
-        //   text: item.title + ' added to favorite',
-        // });
+        var now = new Date();
+        var scheduleDay;
+        switch(item.day){
+          case 'Sunday': scheduleDay = 0; break;
+          case 'Monday': scheduleDay = 1; break;
+          case 'Tuesday': scheduleDay = 2; break;
+          case 'Wednesday': scheduleDay = 3; break;
+          case 'Thursday': scheduleDay = 4; break;
+          case 'Friday': scheduleDay = 5; break;
+          case 'Saturday': scheduleDay = 6; break;
+        }
+        var hour = parseInt(item.start_time);
+        var minute = parseInt(item.start_time.slice(4));
+        // console.log('start time: ' + item.start_time + ' Parsetime:' + hour + ' : ' + minute);
+        if(hour === NaN || minute == NaN){
+          console.warn('set notification failed: Invalid start time');
+        }
+        var scheduleDate = new Date(now.getFullYear(), now.getMonth(),
+                                    now.getDate() + (scheduleDay - now.getDay()), hour, minute, 0, 0);
+        
+        // console.log(scheduleDate.toString());             
+        if(scheduleDate < now){
+          scheduleDate = new Date(scheduleDate.getFullYear(), scheduleDate.getMonth(),
+                                  scheduleDate.getDate() + 7, hour, minute, 0, 0);
+        }
+        // console.log(scheduleDate.toString());
+        PushNotification.localNotificationSchedule({
+          id: item.program_id,
+          title: item.title,
+          message: 'Your favorite programs is about to be on the air in ' + item.start_time,
+          playSound: true,
+          repeatType: 'week',
+          date: scheduleDate,
+        })
+        Alert.alert(item.title + ' added to favorite' , 'Notification created:' + scheduleDate.toString());
         EventRegister.emit('favoriteUpdate', 'add worked!!');
       }
     ).catch(
