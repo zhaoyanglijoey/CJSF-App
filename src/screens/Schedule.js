@@ -132,44 +132,51 @@ export default class Schedule extends React.Component {
 
     return (
         <View style={styles.container}>
-          <Tabs renderTabBar={() => <ScrollableTabBar />}>
-            <Tab heading="Sun">
+          <Tabs locked={false} tabBarUnderlineStyle={styles.tabUnderLine} >
+            <Tab heading="Sun" tabStyle = {styles.tabBar} activeTabStyle = {styles.activeTabBar}
+                      textStyle = {styles.tabText} activeTextStyle = {styles.activeTabText}>
               <List
                 dataArray={this.state.data.Sunday}
                 renderRow={this._renderItem}
               />
             </Tab>
-            <Tab heading="Mon">
+            <Tab heading="Mon" tabStyle={styles.tabBar} activeTabStyle = {styles.activeTabBar}
+                      textStyle = {styles.tabText} activeTextStyle = {styles.activeTabText}>
               <List
                 dataArray={this.state.data.Monday}
                 renderRow={this._renderItem}
               />
             </Tab>
-            <Tab heading="Tue">
+            <Tab heading="Tue" tabStyle={styles.tabBar} activeTabStyle = {styles.activeTabBar}
+                      textStyle = {styles.tabText} activeTextStyle = {styles.activeTabText}>
               <List
                 dataArray={this.state.data.Tuesday}
                 renderRow={this._renderItem}
               />
             </Tab>
-            <Tab heading="Wed">
+            <Tab heading="Wed" tabStyle={styles.tabBar} activeTabStyle = {styles.activeTabBar}
+                      textStyle = {styles.tabText} activeTextStyle = {styles.activeTabText}>
               <List
                 dataArray={this.state.data.Wednesday}
                 renderRow={this._renderItem}
               />
             </Tab>
-            <Tab heading="Thu">
+            <Tab heading="Thu" tabStyle={styles.tabBar} activeTabStyle = {styles.activeTabBar}
+                      textStyle = {styles.tabText} activeTextStyle = {styles.activeTabText}>
               <List
                 dataArray={this.state.data.Thursday}
                 renderRow={this._renderItem}
               />
             </Tab>
-            <Tab heading="Fri">
+            <Tab heading="Fri" tabStyle={styles.tabBar} activeTabStyle = {styles.activeTabBar}
+                      textStyle = {styles.tabText} activeTextStyle = {styles.activeTabText}>
               <List
                 dataArray={this.state.data.Friday}
                 renderRow={this._renderItem}
               />
             </Tab>
-            <Tab heading="Sat">
+            <Tab heading="Sat" tabStyle={styles.tabBar} activeTabStyle = {styles.activeTabBar}
+                      textStyle = {styles.tabText} activeTextStyle = {styles.activeTabText}>
               <List
                 dataArray={this.state.data.Saturday}
                 renderRow={this._renderItem}
@@ -202,18 +209,36 @@ const styles = StyleSheet.create({
     borderBottomColor: "rgba(50, 50, 50, 0.2)"
   },
   listItem: {
-    height: 65
+    height: 60
   },
   programTitle: {
     color: "#000",
     paddingBottom: 5,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "bold"
   },
   description: {
-    fontSize: 14
+    fontSize: 13
   },
   listIcon: {
-    fontSize: 33
+    fontSize: 30
+  },
+  tabBar: {
+    backgroundColor: 'white'
+  },
+  activeTabBar: {
+    backgroundColor: 'white'
+  },
+  tabText: {
+    color: 'black'
+  },
+  activeTabText: {
+    color: 'blue',
+    fontWeight: 'bold',
+  },
+  tabUnderLine: {
+    borderBottomWidth: 2,
+    backgroundColor: 'blue'
   }
+
 });

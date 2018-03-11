@@ -61,7 +61,8 @@ export default class Favorites extends React.Component {
   }
   
   _options = ["Details", "Remove from favorite", "Cancel"];
-
+  // TODO: turn off notification 
+  // Maybe using a clock icon
   _onPressEntry = item => {
     this.props.showActionSheetWithOptions(
       {
@@ -149,18 +150,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   listItem: {
-    height: 65
+    height: 60
   },
   programTitle: {
     color: "#000",
     paddingBottom: 5,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "bold"
   },
   description: {
-    fontSize: 14
+    fontSize: 13
   },
   listIcon: {
-    fontSize: 33
+    fontSize: 30
   },
 });
