@@ -1,14 +1,14 @@
 import React from "react";
 
-import { StyleSheet, View, ActivityIndicator, TouchableOpacity, Alert, ScrollView, AsyncStorage, PushNotificationIOS } from "react-native";
-import { Container, Text, Header, Toast, Content, Button, Icon, List, ListItem,
+import { StyleSheet, View, ActivityIndicator, TouchableOpacity, Alert,
+        Platform, ScrollView, AsyncStorage, PushNotificationIOS } from "react-native";
+import { Container, Text, Header, Content, Button, Icon, List, ListItem,
          Left, Body, Right, Tab, Tabs, Root, ActionSheet, } from "native-base";
-import ScrollableTabView, { ScrollableTabBar} from "react-native-scrollable-tab-view";
 import { ActionSheetProvider, connectActionSheet } from '@expo/react-native-action-sheet';
 import { EventRegister } from 'react-native-event-listeners'
 import { pushNotifications } from '../services';
 import PushNotification from 'react-native-push-notification'
-
+import Toast, {DURATION} from 'react-native-easy-toast'
 
 @connectActionSheet
 export default class Schedule extends React.Component {
@@ -50,19 +50,17 @@ export default class Schedule extends React.Component {
         }
         var hour = parseInt(item.start_time);
         var minute = parseInt(item.start_time.slice(4));
-        // console.log('start time: ' + item.start_time + ' Parsetime:' + hour + ' : ' + minute);
         if(hour === NaN || minute == NaN){
           console.warn('set notification failed: Invalid start time');
         }
         var scheduleDate = new Date(now.getFullYear(), now.getMonth(),
                                     now.getDate() + (scheduleDay - now.getDay()), hour, minute, 0, 0);
         
-        // console.log(scheduleDate.toString());             
         if(scheduleDate < now){
           scheduleDate = new Date(scheduleDate.getFullYear(), scheduleDate.getMonth(),
                                   scheduleDate.getDate() + 7, hour, minute, 0, 0);
         }
-        // console.log(scheduleDate.toString());
+        // scheduleDate = new Date(Date.now() + 60 * 1000)
         PushNotification.localNotificationSchedule({
           id: item.program_id,
           title: item.title,
@@ -71,7 +69,8 @@ export default class Schedule extends React.Component {
           repeatType: 'week',
           date: scheduleDate,
         })
-        Alert.alert(item.title + ' added to favorite' , 'Notification created:' + scheduleDate.toString());
+        // Alert.alert(item.title + ' added to favorites' , 'Notification created:' + scheduleDate.toString());
+        this.refs.toast.show(item.title + ' added to favorites', DURATION.LENGTH_LONG);
         EventRegister.emit('favoriteUpdate', 'add worked!!');
       }
     ).catch(
@@ -86,7 +85,6 @@ export default class Schedule extends React.Component {
       {
         options: this._options,
         cancelButtonIndex: 2,
-        // title: item.title
       },
       buttonIndex => {
         if (buttonIndex === 0) {
@@ -132,50 +130,65 @@ export default class Schedule extends React.Component {
 
     return (
         <View style={styles.container}>
-          <Tabs renderTabBar={() => <ScrollableTabBar />}>
-            <Tab heading="Sun">
+          <Tabs locked={false} tabBarUnderlineStyle={styles.tabUnderLine} >
+            <Tab heading="Sun" tabStyle = {styles.tabBar} activeTabStyle = {styles.activeTabBar}
+                      textStyle = {styles.tabText} activeTextStyle = {styles.activeTabText}>
               <List
                 dataArray={this.state.data.Sunday}
                 renderRow={this._renderItem}
               />
             </Tab>
-            <Tab heading="Mon">
+            <Tab heading="Mon" tabStyle={styles.tabBar} activeTabStyle = {styles.activeTabBar}
+                      textStyle = {styles.tabText} activeTextStyle = {styles.activeTabText}>
               <List
                 dataArray={this.state.data.Monday}
                 renderRow={this._renderItem}
               />
             </Tab>
-            <Tab heading="Tue">
+            <Tab heading="Tue" tabStyle={styles.tabBar} activeTabStyle = {styles.activeTabBar}
+                      textStyle = {styles.tabText} activeTextStyle = {styles.activeTabText}>
               <List
                 dataArray={this.state.data.Tuesday}
                 renderRow={this._renderItem}
               />
             </Tab>
-            <Tab heading="Wed">
+            <Tab heading="Wed" tabStyle={styles.tabBar} activeTabStyle = {styles.activeTabBar}
+                      textStyle = {styles.tabText} activeTextStyle = {styles.activeTabText}>
               <List
                 dataArray={this.state.data.Wednesday}
                 renderRow={this._renderItem}
               />
             </Tab>
-            <Tab heading="Thu">
+            <Tab heading="Thu" tabStyle={styles.tabBar} activeTabStyle = {styles.activeTabBar}
+                      textStyle = {styles.tabText} activeTextStyle = {styles.activeTabText}>
               <List
                 dataArray={this.state.data.Thursday}
                 renderRow={this._renderItem}
               />
             </Tab>
-            <Tab heading="Fri">
+            <Tab heading="Fri" tabStyle={styles.tabBar} activeTabStyle = {styles.activeTabBar}
+                      textStyle = {styles.tabText} activeTextStyle = {styles.activeTabText}>
               <List
                 dataArray={this.state.data.Friday}
                 renderRow={this._renderItem}
               />
             </Tab>
-            <Tab heading="Sat">
+            <Tab heading="Sat" tabStyle={styles.tabBar} activeTabStyle = {styles.activeTabBar}
+                      textStyle = {styles.tabText} activeTextStyle = {styles.activeTabText}>
               <List
                 dataArray={this.state.data.Saturday}
                 renderRow={this._renderItem}
               />
             </Tab>
           </Tabs>
+        <Toast
+          ref="toast"
+          position='bottom'
+          positionValue={200}
+          fadeInDuration={250}
+          fadeOutDuration={500}
+          opacity={0.8}
+        />
         </View>
     );
   }
@@ -202,18 +215,36 @@ const styles = StyleSheet.create({
     borderBottomColor: "rgba(50, 50, 50, 0.2)"
   },
   listItem: {
-    height: 65
+    height: 60
   },
   programTitle: {
     color: "#000",
     paddingBottom: 5,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "bold"
   },
   description: {
-    fontSize: 14
+    fontSize: 13
   },
   listIcon: {
-    fontSize: 33
-  }
+    fontSize: 30
+  },
+  tabBar: {
+    backgroundColor: 'white'
+  },
+  activeTabBar: {
+    backgroundColor: 'white'
+  },
+  tabText: {
+    color: 'black'
+  },
+  activeTabText: {
+    color: 'blue',
+    fontWeight: 'bold',
+  },
+  tabUnderLine: {
+    borderBottomWidth: 2,
+    backgroundColor: 'blue'
+  },
+
 });

@@ -3,6 +3,7 @@ package com.cjsf;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.toast.RCTToastPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import com.facebook.react.ReactNativeHost;
@@ -28,6 +29,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RCTToastPackage(),
             new VectorIconsPackage(),
             new ReactNativePushNotificationPackage(),
           new AudioPackage()

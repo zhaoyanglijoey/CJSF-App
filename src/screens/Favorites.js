@@ -1,12 +1,26 @@
 import React from 'react';
 
-import { StyleSheet, View, Platform, AsyncStorage, ActivityIndicator, Alert } from 'react-native';
-import { Container, Text, Header, Content, Icon, List, ListItem, Toast, Root, ActionSheet, Left, Body, Right, Button } from 'native-base';
-import { ActionSheetProvider, connectActionSheet } from '@expo/react-native-action-sheet';
+import { StyleSheet, View, Platform, AsyncStorage, ListView, ActivityIndicator, Alert } from 'react-native';
+import { Container, Text, Header, Content, Icon, List, ListItem, Root, ActionSheet, Left, Body, Right, Button } from 'native-base';
+// import { ActionSheetProvider, connectActionSheet } from '@expo/react-native-action-sheet';
 import { EventRegister } from 'react-native-event-listeners'
 import PushNotification from 'react-native-push-notification'
+import Toast, {DURATION} from 'react-native-easy-toast'
 
-@connectActionSheet
+function stringToDay(str) {
+  switch(str){
+    case 'Sunday': return 0; break;
+    case 'Monday': return 1; break;
+    case 'Tuesday': return 2; break;
+    case 'Wednesday': return 3; break;
+    case 'Thursday': return 4; break;
+    case 'Friday': return 5; break;
+    case 'Saturday': return 6; break;
+    default: return 0;
+  }
+}
+
+// @connectActionSheet
 export default class Favorites extends React.Component {
 
   constructor(props) {
@@ -15,9 +29,10 @@ export default class Favorites extends React.Component {
       isLoading: true,
       data: [],
     };
+    this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     AsyncStorage.getAllKeys()
     .then(keys => {
       AsyncStorage.multiGet(keys)
@@ -26,10 +41,22 @@ export default class Favorites extends React.Component {
             return JSON.parse(cur[1]);
           })
         }).then(res => {
-            this.setState({
-              isLoading: false,
-              data: res
-            })
+          res.sort( (a, b) => {
+            if(stringToDay(a.day) === stringToDay(b.day)){
+              var hourA = parseInt(a.start_time);
+              var minuteA = parseInt(a.start_time.slice(4));
+              var hourB = parseInt(b.start_time);
+              var minuteB = parseInt(b.start_time.slice(4));
+              return hourA === hourB? minuteA - minuteB : hourA - hourB;
+            }
+            else{
+              return stringToDay(a.day) - stringToDay(b.day);
+            }
+          } )
+          this.setState({
+            isLoading: false,
+            data: res
+          })
         })
     }).catch(error => {
       console.warn(error);
@@ -51,41 +78,80 @@ export default class Favorites extends React.Component {
             return JSON.parse(cur[1]);
           })
         }).then(res => {
-            this.setState({
-              data: res
-            })
+          res.sort( (a, b) => {
+            if(stringToDay(a.day) === stringToDay(b.day)){
+              var hourA = parseInt(a.start_time);
+              var minuteA = parseInt(a.start_time.slice(4));
+              var hourB = parseInt(b.start_time);
+              var minuteB = parseInt(b.start_time.slice(4));
+              return hourA === hourB? minuteA - minuteB : hourA - hourB;
+            }
+            else{
+              return stringToDay(a.day) - stringToDay(b.day);
+            }
+          } )
+          this.setState({
+            data: res
+          })
         })
     }).catch(error => {
       console.warn(error);
     })
   }
   
-  _options = ["Details", "Remove from favorite", "Cancel"];
+  // _options = ["Details", "Remove from favorite", "Cancel"];
+  // TODO: turn off notification 
+  // Maybe using a clock icon
 
-  _onPressEntry = item => {
-    this.props.showActionSheetWithOptions(
-      {
-        options: this._options,
-        cancelButtonIndex: 2,
-        destructiveButtonIndex: 1,
-        // title: item.title
-      },
-      buttonIndex => {
-        if (buttonIndex === 0) {
-          Alert.alert(item.title, item.description);
-        }
-        if (buttonIndex === 1) {
-          AsyncStorage.removeItem(item.program_id)
-          .then(() => {
-            PushNotification.cancelLocalNotifications({id: item.program_id});
-            this._updateContent()
-          })
-          .catch(error => {
-            console.warn(error);
-          })
-        } 
-      }
-    )
+  // _onPressEntry = item => {
+  //   this.props.showActionSheetWithOptions(
+  //     {
+  //       options: this._options,
+  //       cancelButtonIndex: 2,
+  //       destructiveButtonIndex: 1,
+  //       // title: item.title
+  //     },
+  //     buttonIndex => {
+  //       if (buttonIndex === 0) {
+  //         Alert.alert(item.title, item.description);
+  //       }
+  //       if (buttonIndex === 1) {
+  //         AsyncStorage.removeItem(item.program_id)
+  //         .then(() => {
+  //           PushNotification.cancelLocalNotifications({id: item.program_id});
+  //           this.refs.toast.show(item.title + ' removed from favorites', DURATION.LENGTH_LONG);
+  //           this._updateContent();
+  //         })
+  //         .catch(error => {
+  //           console.warn(error);
+  //         })
+  //       } 
+  //     }
+  //   )
+  // }
+
+  _onPressDelete = (item, secId, rowId, rowMap) => {
+    Alert.alert(
+      'Remove from favorites', 
+      'Are you sure you want to remove "' + item.title + '" from favorites?',
+      [
+        {text: 'Cancel'},
+        {text: 'Yes', onPress: () => this._removeItem(item, secId, rowId, rowMap)}
+      ]
+    );
+  } 
+
+  _removeItem = (item, secId, rowId, rowMap) => {
+    AsyncStorage.removeItem(item.program_id)
+    .then(() => {
+      PushNotification.cancelLocalNotifications({id: item.program_id});
+      this.refs.toast.show(item.title + ' removed from favorites', DURATION.LENGTH_LONG);
+      rowMap[`${secId}${rowId}`].props.closeRow();    
+      this._updateContent();
+    })
+    .catch(error => {
+      console.warn(error);
+    })
   }
 
   _renderItem = item => (
@@ -93,13 +159,12 @@ export default class Favorites extends React.Component {
       <Body>
         <Text style={styles.programTitle}>{item.title}</Text>
         <Text style={styles.description} numberOfLines={1}>
-          {item.start_time} - {item.end_time} {item.short_description}
+          {item.short_description}
         </Text>
       </Body>
       <Right>
-        <Button transparent onPress={() => this._onPressEntry(item)}>
-          <Icon name="ios-list" style={styles.listIcon} />
-        </Button>
+        <Text note numberOfLine={1} style={{fontSize: 12}}>{item.day}</Text>
+        <Text note numberOfLine={1} style={{fontSize: 12}}> {item.start_time} - {item.end_time}</Text>
       </Right>
     </ListItem>
   );
@@ -130,8 +195,27 @@ export default class Favorites extends React.Component {
 
     return (
         <View style={styles.container}>
-          <List dataArray={this.state.data}
+          <List
+            dataSource={this.ds.cloneWithRows(this.state.data)}
             renderRow={this._renderItem} 
+            renderLeftHiddenRow={item =>
+              <Button full onPress={() => Alert.alert(item.title, item.description)}>
+                <Icon active name="information-circle" />
+              </Button>}
+            renderRightHiddenRow={(item, secId, rowId, rowMap) =>
+              <Button full danger onPress={_ => this._onPressDelete(item, secId, rowId, rowMap)}>
+                <Icon active name="ios-trash" />
+              </Button>}
+            leftOpenValue={75}
+            rightOpenValue={-75}
+          />
+          <Toast
+            ref="toast"
+            position='bottom'
+            positionValue={200}
+            fadeInDuration={500}
+            fadeOutDuration={500}
+            opacity={0.8}
           />
         </View>
     );
@@ -149,18 +233,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   listItem: {
-    height: 65
+    height: 60
   },
   programTitle: {
     color: "#000",
+    paddingLeft: 10,
     paddingBottom: 5,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "bold"
   },
   description: {
-    fontSize: 14
+    paddingLeft: 10,
+    fontSize: 13
   },
   listIcon: {
-    fontSize: 33
+    fontSize: 30
   },
 });
