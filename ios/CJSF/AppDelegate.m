@@ -11,6 +11,8 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+
+// added for push notification 
 #import <React/RCTPushNotificationManager.h>
 
 @implementation AppDelegate

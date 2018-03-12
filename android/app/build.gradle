@@ -137,7 +137,10 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-toast-native')
     compile project(':react-native-vector-icons')
+    
+    //Added for push notification
     compile project(':react-native-push-notification')
 
     compile fileTree(dir: "libs", include: ["*.jar"])
