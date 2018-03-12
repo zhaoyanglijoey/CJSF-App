@@ -7,6 +7,19 @@ import { EventRegister } from 'react-native-event-listeners'
 import PushNotification from 'react-native-push-notification'
 import Toast, {DURATION} from 'react-native-easy-toast'
 
+function stringToDay(str) {
+  switch(str){
+    case 'Sunday': return 0; break;
+    case 'Monday': return 1; break;
+    case 'Tuesday': return 2; break;
+    case 'Wednesday': return 3; break;
+    case 'Thursday': return 4; break;
+    case 'Friday': return 5; break;
+    case 'Saturday': return 6; break;
+    default: return 0;
+  }
+}
+
 // @connectActionSheet
 export default class Favorites extends React.Component {
 
@@ -19,7 +32,7 @@ export default class Favorites extends React.Component {
     this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     AsyncStorage.getAllKeys()
     .then(keys => {
       AsyncStorage.multiGet(keys)
@@ -28,10 +41,22 @@ export default class Favorites extends React.Component {
             return JSON.parse(cur[1]);
           })
         }).then(res => {
-            this.setState({
-              isLoading: false,
-              data: res
-            })
+          res.sort( (a, b) => {
+            if(stringToDay(a.day) === stringToDay(b.day)){
+              var hourA = parseInt(a.start_time);
+              var minuteA = parseInt(a.start_time.slice(4));
+              var hourB = parseInt(b.start_time);
+              var minuteB = parseInt(b.start_time.slice(4));
+              return hourA === hourB? minuteA - minuteB : hourA - hourB;
+            }
+            else{
+              return stringToDay(a.day) - stringToDay(b.day);
+            }
+          } )
+          this.setState({
+            isLoading: false,
+            data: res
+          })
         })
     }).catch(error => {
       console.warn(error);
@@ -53,9 +78,12 @@ export default class Favorites extends React.Component {
             return JSON.parse(cur[1]);
           })
         }).then(res => {
-            this.setState({
-              data: res
-            })
+          res.sort( (a, b) => {
+            return stringToDay(a.day) - stringToDay(b.day);
+          })
+          this.setState({
+            data: res
+          })
         })
     }).catch(error => {
       console.warn(error);
