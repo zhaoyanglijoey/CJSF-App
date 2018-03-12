@@ -27,7 +27,7 @@ export default class Home extends React.Component {
     buttonImg = [require('../../res/assets/play.png'), require('../../res/assets/stop.png')];
     this.state = {
       seackBarVal : 40,
-      playingButtonImg : 0,
+      playingButtonImg : 1,
       IsPlaying: false
     }
   }
@@ -54,9 +54,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image source={require('../../res/assets/splashscreen.png')} style={styles.imageAlbum}/>
-
-        <Content>
+          <Image source={require('../../res/assets/splashscreen.png')} style={styles.imageAlbum}/>
           <Text>
             Democracy Now!
           </Text>
@@ -66,12 +64,11 @@ export default class Home extends React.Component {
                   maximumValue = { 100 }
                   minimumTrackTintColor = "#009688"
           ></Slider>
-          
-          <Button rounded light onPress={() => this._onPress()}>
-            <Image source={buttonImg[this.state.playingButtonImg]} style={styles.playButton}/>
-          </Button>
-
-        </Content>
+          <View style={styles.playButtonContainer}>
+            <Button light onPress={() => this._onPress()}>
+              <Image source={buttonImg[this.state.playingButtonImg]} style={styles.playButton}/>
+            </Button>
+          </View>
 
       </View>
     );
@@ -84,17 +81,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  },  
   playButton: {
-    height: 40,
-    width : 40
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 50,
+    width : 50
   },
   imageAlbum:{
     height:300, 
     width: 300
   },
   seakBar:{
-    width: '100%'
+    width: '80%'
+  },
+  playButtonContainer: {
+    padding: 20,
+
   }
 
 });
