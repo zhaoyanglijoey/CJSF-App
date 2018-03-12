@@ -79,8 +79,17 @@ export default class Favorites extends React.Component {
           })
         }).then(res => {
           res.sort( (a, b) => {
-            return stringToDay(a.day) - stringToDay(b.day);
-          })
+            if(stringToDay(a.day) === stringToDay(b.day)){
+              var hourA = parseInt(a.start_time);
+              var minuteA = parseInt(a.start_time.slice(4));
+              var hourB = parseInt(b.start_time);
+              var minuteB = parseInt(b.start_time.slice(4));
+              return hourA === hourB? minuteA - minuteB : hourA - hourB;
+            }
+            else{
+              return stringToDay(a.day) - stringToDay(b.day);
+            }
+          } )
           this.setState({
             data: res
           })
@@ -90,7 +99,7 @@ export default class Favorites extends React.Component {
     })
   }
   
-  _options = ["Details", "Remove from favorite", "Cancel"];
+  // _options = ["Details", "Remove from favorite", "Cancel"];
   // TODO: turn off notification 
   // Maybe using a clock icon
 
