@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StyleSheet, View, ActivityIndicator, TouchableOpacity, Alert,
+import { StyleSheet, View, ActivityIndicator, TouchableOpacity, Alert, NetInfo,
         Platform, ScrollView, AsyncStorage, PushNotificationIOS } from "react-native";
 import { Container, Text, Header, Content, Button, Icon, List, ListItem,
          Left, Body, Right, Tab, Tabs, Root, ActionSheet, } from "native-base";
@@ -9,28 +9,92 @@ import { EventRegister } from 'react-native-event-listeners'
 import { pushNotifications } from '../services';
 import PushNotification from 'react-native-push-notification'
 import Toast, {DURATION} from 'react-native-easy-toast'
+import { ScaledSheet, scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { weeklyScheduleUrl } from '../assets/constants/url.js' 
+import Favorites from './Favorites.js'
+
 
 @connectActionSheet
 export default class Schedule extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: true };
+    this.state = { isLoading: true, isConnected: false };
+    // this._connectionChangeHandler = this._connectionChangeHandler.bind(this);
+    this.addedToFavorite = false;
   }
 
   componentDidMount() {
-    var url = "http://cjsf.ca/api/station/programs_by_week";
-    return fetch(url)
-      .then(response => response.json())
-      .then(responseJson => {
-        this.setState({
-          isLoading: false,
-          data: responseJson
+    NetInfo.addEventListener('connectionChange', this._connectionChangeHandler);
+
+    NetInfo.isConnected.fetch().then(isConnected => {
+      if(isConnected){
+        fetch(weeklyScheduleUrl)
+        .then(response => {
+          if (response.status === 200) {
+            return response.json();
+          } else {
+            throw new Error('Something went wrong on api server!');
+          }
+        })
+        .then(responseJson => {
+          this.setState({
+            isLoading: false,
+            data: responseJson
+          });
+        })
+        .catch(error => {
+          console.error(error);
         });
-      })
-      .catch(error => {
-        console.error(error);
-      });
+
+        this.setState({
+          isConnected: true
+        })
+      }
+    });
+
+
   }
+
+  componentWillUnmount() {
+    NetInfo.removeEventListener('connectionChange', this._connectionChangeHandler);
+  }
+
+  _connectionChangeHandler = () => {
+    NetInfo.isConnected.fetch().then(isConnected => {
+      if(isConnected){
+        fetch(weeklyScheduleUrl)
+        .then(response => {
+          if (response.status === 200) {
+            return response.json();
+          } else {
+            throw new Error('Something went wrong on api server!');
+          }
+        })
+        .then(responseJson => {
+          this.setState({
+            isLoading: false,
+            data: responseJson
+          });
+        })
+        .catch(error => {
+          console.error(error);
+        });
+
+        this.setState({
+          isConnected: true
+        })
+      }
+      // else{
+      //   this.setState({
+      //     isConnected: false
+      //   })
+      //   return;
+      // }
+    });
+
+
+  }
+
   _options = ["Details", "Add to favorite", "Cancel"];
 
   _addFavorite = item => {
@@ -55,21 +119,27 @@ export default class Schedule extends React.Component {
         }
         var scheduleDate = new Date(now.getFullYear(), now.getMonth(),
                                     now.getDate() + (scheduleDay - now.getDay()), hour, minute, 0, 0);
-        
+        scheduleDate = new Date(scheduleDate - 10 * 60 * 1000);
+
         if(scheduleDate < now){
           scheduleDate = new Date(scheduleDate.getFullYear(), scheduleDate.getMonth(),
-                                  scheduleDate.getDate() + 7, hour, minute, 0, 0);
+                                  scheduleDate.getDate() + 7, scheduleDate.getHours, scheduleDate.getMinutes, 0, 0);
         }
-        // scheduleDate = new Date(Date.now() + 60 * 1000)
+        // scheduleDate = new Date(Date.now() + 10 * 1000); //for test
         PushNotification.localNotificationSchedule({
           id: item.program_id,
           title: item.title,
-          message: 'Your favorite programs is about to be on the air in ' + item.start_time,
+          message: 'Starting at ' + item.start_time + '!',
           playSound: true,
           repeatType: 'week',
           date: scheduleDate,
+          // ongoing: false,
+          //required for iOS to cancel notification
+          // userInfo: {
+          //   id: item,program_id,
+          // },
+          // number: 1,
         })
-        // Alert.alert(item.title + ' added to favorites' , 'Notification created:' + scheduleDate.toString());
         this.refs.toast.show(item.title + ' added to favorites', DURATION.LENGTH_LONG);
         EventRegister.emit('favoriteUpdate', 'add worked!!');
       }
@@ -97,6 +167,10 @@ export default class Schedule extends React.Component {
     );
   }
   
+  // _onPressIcon = item => {
+  //   if(this.addedToFavorite)
+  // }
+
   _renderItem = item => (
     <ListItem style={styles.listItem}>
       <Body>
@@ -114,6 +188,18 @@ export default class Schedule extends React.Component {
   );
 
   render() {
+    if(!this.state.isConnected){
+      return (
+        <View style={{
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'center',
+          }}>
+          <Text>Network unavailable</Text>
+        </View>
+      )
+    }
+
     if (this.state.isLoading) {
       return (
         <View style={{
@@ -194,40 +280,25 @@ export default class Schedule extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff"
   },
-  header: {
-    padding: 15,
-    backgroundColor: "rgba(240, 253, 245, 0.5)"
-  },
-  headerText: {
-    fontSize: 20,
-    fontWeight: "bold"
-  },
-  entry: {
-    // alignItems: 'stretch',
-    height: 65,
-    backgroundColor: "#fff",
-    borderBottomWidth: 1,
-    borderBottomColor: "rgba(50, 50, 50, 0.2)"
-  },
   listItem: {
-    height: 60
+    height: '65@vs'
   },
   programTitle: {
     color: "#000",
-    paddingBottom: 5,
-    fontSize: 16,
+    paddingBottom: '5@vs',
+    fontSize: '16@s',
     fontWeight: "bold"
   },
   description: {
-    fontSize: 13
+    fontSize: '13@s'
   },
   listIcon: {
-    fontSize: 30
+    fontSize: '30@ms'
   },
   tabBar: {
     backgroundColor: 'white'
