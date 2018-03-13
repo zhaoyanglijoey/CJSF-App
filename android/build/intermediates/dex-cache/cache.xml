@@ -3,318 +3,318 @@
 
     <item
         is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/11.0.4/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="2430e711762a749feb00b3d64858ca4768251b9d">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-11.0.4_a2c8120d461ed91596449a997c11c93b7013be7f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.3.0_5ffd96fcf7c8312607e666fb653ad81ad5ff585b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/CJSF/react-native-vector-icons/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="ee92e255dcd813c08213aad584450af5dbd00326">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/CJSF-react-native-vector-icons-unspecified_6782b9e6a81eee641d92ef2d7a7a8faadfcd29be.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_4e8dd705f9ec81bfdb20bed800960daa3ba44995.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\1.3.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.3.0_ce087924814f30c4c072a9540ee5789b13623320.jar" />
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-1.3.0_53d75ed8193d6235608b11214ecafe3457eadd00.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/me.leolin/ShortcutBadger/1.1.8/jars/classes.jar"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\CJSF\react-native-push-notification\unspecified\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="531c33d3697000a05e9493a2d0f09ba41fa114d3">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/me.leolin-ShortcutBadger-1.1.8_8a5871e43b2a9874157801e9c464d4ced43d8d68.jar" />
+        sha1="2e3e5a199c7209bab2dd53b85eefb664494af06d">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\CJSF-react-native-push-notification-unspecified_4b4e7341ca2c33cded855023235cd48625cf25f0.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.3.0_fb54757ba7bc0709e3d03ffce9a9cf66df57990f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/11.0.4/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="dd282bdeaa904c59d77e57dedd7e0a241c9b679d">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-iid-11.0.4_f1d6b87558a8743f1177dc21c59092bfbd913a27.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/CJSF/react-native-push-notification/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="fec4fc7e99a6210e3a6129f3bac59c36b6cd841f">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/CJSF-react-native-push-notification-unspecified_f4f02f482ff37519e44b9e5528e61502da5d2077.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_a4e133a454d53b8ff2beed9022ca1fdf1ef6a9ae.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_61db72dc0a2c82e82d4e9855124d300521edc7f5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/11.0.4/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d8942ee348aaa9341f08f7e2437063893fe27542">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-gcm-11.0.4_f5ca19850a9fe731eb7b113b494357df351991cd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.3.0_87ac3f93dbaf586d4ca5313ae568d88a58f7c4f2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/CJSF/react-native-toast-native/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="a292c619d516bc946bab5f24b2237e258c6a5fba">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/CJSF-react-native-toast-native-unspecified_0b5b024d820391d3af75a793f45922e6552c772c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_f4e1395c020faa06fa7a9d3bd9a33f61ec6bb8bc.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_afd18b9ccaeb3818c1a33ede77394a3e7950e027.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.2.0_2687a12527db2a807ca89cf81045b6d63e26cf74.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.52.0/jars/libs/infer-annotations-4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_2463be6f73aeb9a00e11dcc21ef129c139b64049.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_51a658c2080e6eebe41e0c6da90228005f1d3412.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_82293fe5d3f75e09354633364677a7e508f4de4f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.2.0_a178f5585f5991074854d01df8825eec219e27c9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.2.0_776d9620a33185749506e6d4b440f4f8d4c0a379.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/support-annotations-25.2.0_561d818407c0183dffb7c4e851dc6ce5eb9eb2c8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.2.0_2d5638f2f01f9317671118c0f2cfa1feeff317a4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.52.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="af61eb11ffb4296cab0c93218248a3dfcec0a84c">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.52.0_e9f46423f0909bb57793f50d3952c97c050e58a8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/11.0.4/jars/classes.jar"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\11.0.4\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="364364bf77b4a71afc5930fc3ae57b3f0eea637c">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-11.0.4_0180e858dc6b181b3c205f6bdb940ca0c1a87b76.jar" />
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-11.0.4_7e61b2de6be30b99a2fa1dce8ba7e2e5aa98afbb.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.2.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_3766e6a038294ba4e5f37cfc1ce6acbd42aed2b2.jar" />
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.2.0_508b035d52ed62d39f1323129da5d91634d61185.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhaoyangli/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_848d2474fa080e488832eb8e61362a40a723a8f8.jar" />
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_9961000df0b3c8c3d8d8e36755566bf528bac4d5.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.2.0_4af5eba44e7105e7dbc26a409781dbe9126f5cab.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_6d81f742214310481186c8fefba7bf765c5d7a23.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_cf2310e11f8db343e86498d2fc43f584af942861.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.4/jars/classes.jar"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\11.0.4\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="70ffe00aaf049893f59d1dad57bd82992faa38ef">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-11.0.4_00664eb501ed2152fb214793a1754233c31b443f.jar" />
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-11.0.4_0891c066b8c669d1d0216215837856e0a6efede8.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.52.0\jars\libs\infer-annotations-4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_0c7d06c85891a89285ac0fb9fde82101b4677d17.jar" />
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_66f91b4a1ca24690918019c52bcfd93220088796.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/CJSF/react-native-audio-toolkit/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="12180b6f82846cb6ea7ea33bf492ce7c028ff051">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/CJSF-react-native-audio-toolkit-unspecified_6d1a1af6b9154a86b738cec307a1074b12541f75.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.2.0/jars/classes.jar"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.2.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
-        <dex dex="/home/zhaoyangli/programs/CJSFApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.2.0_fc8f654f5dfbd13f13c8f2477a7b95216c93c44e.jar" />
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.2.0_8ab6dfa1e2dbaede79f7189e108549588834d721.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-1.3.0_1b3530fbddbc96e4e022ba482a497e12ed341d0f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.1.1_a4dc982bd2820139eac638cc61ae69b190dfece5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fresco\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fresco-1.3.0_ee109c4985e6e34a719770de2ab6a9d097149d2c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\CJSF\react-native-toast-native\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5062ba78e1f19946c41d65a337426b5cec9fc551">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\CJSF-react-native-toast-native-unspecified_56d711b699b0c7ddcb1333ae7722024262e37eee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.6.0\3f9b16b774f2c36cfd86dd2053d0b3059531dacc\okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.6.0_e1636b18724b0a069b29c6cb8c9915b9dfd5b4da.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-1.3.0_20af198bc58bda5e13ca2ad81a7167d0eb5e8bd7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-okhttp3\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-okhttp3-1.3.0_48f3c219ac6b1e8506dd9c7a72fab17a6233a4bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.2.0_9823ccbad8feee952327c4c5607d03320a4ed73e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.2.0_93923d7baadda7d719a7308ba71350b69808931e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\okhttp-3.6.0_3c4c600712738bac25ee18a247dd3b2dd70aec83.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.52.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="af61eb11ffb4296cab0c93218248a3dfcec0a84c">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.52.0_a6e7acc3c3150599b90f197c88ed5464b6520b0d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.3.0_53f0d202bdc83795f330ddf5ef2412aa06dcc3d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_c1fa952f887f2a341c7ac31c30014866abd60ef3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_b20cbd858d3a61df2ec8356e9110524047761d3f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\me.leolin\ShortcutBadger\1.1.8\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="531c33d3697000a05e9493a2d0f09ba41fa114d3">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\me.leolin-ShortcutBadger-1.1.8_ff6243dffda7455e3d9f46298a8631bc6acfa34e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\11.0.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d8942ee348aaa9341f08f7e2437063893fe27542">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-gcm-11.0.4_233e164cd8b35f499e58a971bc56a95989b48e3b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\11.0.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="dd282bdeaa904c59d77e57dedd7e0a241c9b679d">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-iid-11.0.4_4bd5a2862e7c80de1a25c3737473926f20350023.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\25.2.0\support-annotations-25.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\support-annotations-25.2.0_3d4fcc0e6b9ca71b73d9fc24870eb1d07a785f8e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_02e2c7b426e5f63c5d3544a33a63dfa48ff79bba.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.2.0_6fa174851dae90c830b20cd4fc14d046cc92d3f0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.0\5871fb60dc68d67da54a663c3fd636a10a532948\jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\jsr305-3.0.0_7bb8642be3c0557d9a808941c2dbb04bcc4da231.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.2.0_1dc0f081f62f36cdc8afc916a1406a21897c1ed4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\11.0.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2430e711762a749feb00b3d64858ca4768251b9d">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-11.0.4_8a2f4044e0bbc43636e139bc9a110f7e2646c725.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_2d7ee352a7877c58d774e69e6ffbb83078eb78bb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\CJSF\react-native-audio-toolkit\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="67ebccccbf5d32f2f0b9a3d5c847052b43d2b6cc">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\CJSF-react-native-audio-toolkit-unspecified_a5ac85db817535aec00aa3320abbbc745d5a3cb3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\com.facebook.fbui.textlayoutbuilder\textlayoutbuilder\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_c8b2f6d8aa20ec005af088292d21a9b3d3c7e0eb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\exploded-aar\CJSF\react-native-vector-icons\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="279750fed3c920d06351dbf32889c1b48203c7ad">
+        <dex dex="C:\Users\Yagnik\Desktop\Git\cjsf\GitLab\CJSFApp\android\app\build\intermediates\pre-dexed\debug\CJSF-react-native-vector-icons-unspecified_31ed065650cc6a72ac2e440ee063a30594aca095.jar" />
     </item>
 
 </items>

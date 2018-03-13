@@ -12,7 +12,7 @@ import About from '../screens/About';
 //Styles fot the bottom nav bad icons
 var styles = StyleSheet.create({
     container: {
-
+        
     },
     mainHeader: {
         //paddingTop: (Platform.OS === 'android') ? Expo.Constants.statusBarHeight : 20,

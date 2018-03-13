@@ -68,5 +68,10 @@
 		<string>Feather.ttf</string>
 		<string>MaterialCommunityIcons.ttf</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
 </dict>
 </plist>
