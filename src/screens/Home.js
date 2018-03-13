@@ -35,7 +35,6 @@ export default class Home extends React.Component {
     super();
     console.log(stremingUrl);
     
-
     this.state = {
       seackBarVal : 40,
       playingButtonImg : 0,
@@ -44,15 +43,17 @@ export default class Home extends React.Component {
     }
   }
 
+  //Lifecycles  methods
   componentWillMount(){
     buttonImg = [require('../../res/assets/play.png'), require('../../res/assets/stop.png')];
   }
 
   componentDidMount(){
-    player.playPause((err, playing) => {
+    player.prepare((err)=> {
       console.log(err);
     });
   }
+
   closeActivityIndicator(){
     
     this.setState({ animating: false });
@@ -65,9 +66,9 @@ export default class Home extends React.Component {
   }
 
 
-  _onPressHandler(){
+  _onPressPlayHandler(){
     console.log("Play And Pause!!");
-
+    console.log("Player can play: player.canPlay");
     if (player.canPlay){
       this.playAndPause();
     }else {
@@ -130,7 +131,7 @@ export default class Home extends React.Component {
                   minimumTrackTintColor = "#009688"
           ></Slider>
           <View style={styles.playButtonContainer}>
-            <Button light onPress={() => this._onPressHandler()}>
+            <Button light onPress={() => this._onPressPlayHandler()}>
               <Image source={buttonImg[this.state.playingButtonImg]} style={styles.playButton}/>
             </Button>
           </View>
