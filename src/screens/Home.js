@@ -5,6 +5,7 @@ import { Container, Header, Content, Icon ,
   H1, H2, H3, 
   Text, Button,
   Card, CardItem,
+  Left, Right,Body
 } from 'native-base';
 
 import {
@@ -12,7 +13,10 @@ import {
   MediaStates
 } from 'react-native-audio-toolkit';
 
-import { stremingUrl } from '../assets/constants/url';
+import moment from 'moment';
+import * as Progress from 'react-native-progress';
+
+import { stremingUrl, nowPlayingUrl } from '../assets/constants/url';
 
 
 var playbackOptions = {
@@ -39,7 +43,9 @@ export default class Home extends React.Component {
       seackBarVal : 40,
       playingButtonImg : 0,
       IsPlaying: false,
-      animating: false
+      animating: false,
+      nowPlayingData : { short_description : "Loading"},
+      seeakBarVal : 10
     }
   }
 
@@ -48,23 +54,74 @@ export default class Home extends React.Component {
     buttonImg = [require('../../res/assets/play.png'), require('../../res/assets/stop.png')];
   }
 
-  componentDidMount(){
+  componentDidMount() {
+
+    //--------------------------------------------Load now playing data to display--------------------------------
+    return fetch(nowPlayingUrl)
+      .then(response => response.json())
+      .then(responseJson => {
+        this.setState({
+          nowPlayingData: responseJson
+        });
+        console.log(responseJson);
+        this.calculateTime(responseJson.start_time, responseJson.end_time);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    
+    //--------------------------------------------Prepare player to stream--------------------------------
     player.prepare((err)=> {
       console.log(err);
     });
+
   }
 
-  closeActivityIndicator(){
+  calculateTime(start, end){
     
+    let totalMinutes = this.timeDiff(start, end);
+
+    let date = new Date();
+    let minuteNow = date.getMinutes();
+    let hourNow = date.getHours();
+    
+    let timeNow = hourNow +  ":" + minuteNow;
+
+    let timeLeft = this.timeDiff( timeNow, end );
+
+    let seeakBarVal = parseInt((timeLeft/totalMinutes)*100);
+
+    this.setState({
+      seeakBarVal : seeakBarVal
+    });
+    console.log("Time remaining : " + this.state.seeakBarVal);
+  }
+
+  timeDiff(start, end){
+    let hourStart = parseInt(start.substring(0,2));
+    let hourEnd = parseInt(end.substring(0,2));
+    let minStart = parseInt(start.substring(3,5));
+    let minEnd = parseInt(end.substring(3,5));
+
+    if (hourStart > hourEnd) hourEnd += 24;
+
+    let hourDiff = Math.abs(hourEnd - hourStart);
+    let minDiff = Math.abs(minEnd - minStart);
+
+    return hourDiff*60 + (minDiff);
+  }
+
+
+  closeActivityIndicator(){
     this.setState({ animating: false });
     console.log("Closeing now! = "+ this.state.animating);
   }
+
   startActivityIndicator(){
     this.state.animating = true;
     this.setState({ animating: true });
     console.log("Starting now!: "+ this.state.animating);
   }
-
 
   _onPressPlayHandler(){
     console.log("Play And Pause!!");
@@ -80,7 +137,6 @@ export default class Home extends React.Component {
         this.playAndPause();
       });
     }
-    
   }
 
   playAndPause(){
@@ -99,48 +155,48 @@ export default class Home extends React.Component {
       this.setState((prevState, props) => {
         return {playingButtonImg: this.state.playingButtonImg};
       });
-      
-      console.log("URL: "+ this.state.playingButtonImg );
     });
    
   }
 
-
-
+  //-----------------------------HTML renderig --------------------------------------------
   render() {
     return (
-      <View style={styles.container}>
+      <Container>
+        <View style={styles.container}>
         
-          <Image source={require('../../res/assets/splashscreen.png')} style={styles.imageAlbum} resizeMode="contain" />
-          {this.state.animating ?  
-            <ActivityIndicator
-            animating = {true}
-            color = '#172d51'
-            size = "large"
-            style = {styles.activityIndicator}/> : 
-            <View></View>
-          }
-          
-          <Text>
-            Democracy Now!
-          </Text>
-          <Slider style={styles.seakBar}
-                  step = { this.state.seackBarVal }
-                  minimumValue = { 0 }
-                  maximumValue = { 100 }
-                  minimumTrackTintColor = "#009688"
-          ></Slider>
-          <View style={styles.playButtonContainer}>
-            <Button light onPress={() => this._onPressPlayHandler()}>
-              <Image source={buttonImg[this.state.playingButtonImg]} style={styles.playButton}/>
-            </Button>
-          </View>
+            <Image source={require('../../res/assets/splashscreen.png')} style={styles.imageAlbum} resizeMode="contain" />
+            {this.state.animating ?  
+              <ActivityIndicator
+              animating = {true}
+              color = '#172d51'
+              size = "large"
+              style = {styles.activityIndicator}/> : 
+              <View></View>
+            }
+            
+            <Text>
+              {this.state.nowPlayingData.short_description}
+            </Text>
+            <View style={{flexDirection: "row", position: "absolute",  left: 0, right: 0, justifyContent: 'space-between', padding: 8}}>
+              <Text > Left </Text>
+              <Progress.Bar  progress={0.3} width={200} style={styles.seakBar} />
+              <Text> Right </Text>
+            </View>
 
-      </View>
+            <View style={styles.playButtonContainer}>
+              <Button light onPress={() => this._onPressPlayHandler()}>
+                <Image source={buttonImg[this.state.playingButtonImg]} style={styles.playButton}/>
+              </Button>
+            </View>
+
+        </View>
+      </Container>
     );
   }
 }
 
+//-------------------------------STYLES-------------------------------------------------------
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -158,7 +214,7 @@ const styles = StyleSheet.create({
     flex:1, 
   },
   seakBar:{
-    width: '80%'
+    borderColor: 'black',
   },
   playButtonContainer: {
     padding: 20,
