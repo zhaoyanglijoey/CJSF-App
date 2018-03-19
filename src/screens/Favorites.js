@@ -6,6 +6,7 @@ import { Container, Text, Header, Content, Icon, List, ListItem, Root, ActionShe
 import { EventRegister } from 'react-native-event-listeners'
 import PushNotification from 'react-native-push-notification'
 import Toast, {DURATION} from 'react-native-easy-toast'
+import { ScaledSheet, scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 function stringToDay(str) {
   switch(str){
@@ -154,6 +155,27 @@ export default class Favorites extends React.Component {
     })
   }
 
+  // removeItem = (item) => {
+  //   Alert.alert(
+  //     'Remove from favorites', 
+  //     'Are you sure you want to remove "' + item.title + '" from favorites?',
+  //     [
+  //       {text: 'Cancel'},
+  //       {text: 'Yes', onPress: () => {
+  //         AsyncStorage.removeItem(item.program_id)
+  //         .then(() => {
+  //           PushNotification.cancelLocalNotifications({id: item.program_id});
+  //           this.refs.toast.show(item.title + ' removed from favorites', DURATION.LENGTH_LONG);
+  //           this._updateContent();
+  //         })
+  //         .catch(error => {
+  //           console.warn(error);
+  //         })
+  //       }}
+  //     ]
+  //   );
+  // }
+
   _renderItem = item => (
     <ListItem style={styles.listItem}>
       <Body>
@@ -163,8 +185,8 @@ export default class Favorites extends React.Component {
         </Text>
       </Body>
       <Right>
-        <Text note numberOfLine={1} style={{fontSize: 12}}>{item.day}</Text>
-        <Text note numberOfLine={1} style={{fontSize: 12}}> {item.start_time} - {item.end_time}</Text>
+        <Text note numberOfLine={1} style={{fontSize: scale(12)}}>{item.day}</Text>
+        <Text note numberOfLine={1} style={{fontSize: scale(12)}}> {item.start_time} - {item.end_time}</Text>
       </Right>
     </ListItem>
   );
@@ -187,7 +209,7 @@ export default class Favorites extends React.Component {
         <Text style = {{
           alignItems: 'center',
           justifyContent: 'center',
-          fontSize: 20,
+          fontSize: 16,
         }}>No favorite yet</Text> 
         </Container>
       )
@@ -222,7 +244,7 @@ export default class Favorites extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -233,18 +255,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   listItem: {
-    height: 60
+    height: '65@vs'
   },
   programTitle: {
     color: "#000",
-    paddingLeft: 10,
-    paddingBottom: 5,
-    fontSize: 16,
+    paddingLeft: '10@s',
+    paddingBottom: '5@vs',
+    fontSize: '16@s',
     fontWeight: "bold"
   },
   description: {
-    paddingLeft: 10,
-    fontSize: 13
+    paddingLeft: '10@s',
+    fontSize: '13@s'
   },
   listIcon: {
     fontSize: 30
