@@ -17,12 +17,15 @@ var styles = StyleSheet.create({
     mainHeader: {
         //paddingTop: (Platform.OS === 'android') ? Expo.Constants.statusBarHeight : 20,
         //height: ( (Platform.OS === 'android') ? 56 : 44 ) + Expo.Constants.statusBarHeight
-
+        backgroundColor: '#38404c',
+        
     },
     headerTitle: {
         alignSelf:'center',
         textAlign: 'center',
-        width: '100%'
+        width: '100%',
+        color : 'white'
+        
     },
 });
 
@@ -118,6 +121,9 @@ export const Tabs = TabNavigator({
             fontSize: 12,
             margin: 0,
         },
+        style: {
+            backgroundColor: '#38404c',
+        }
     },
     navigationOptions: {
         header: {

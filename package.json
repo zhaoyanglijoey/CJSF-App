@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@expo/react-native-action-sheet": "^1.0.2",
+    "moment": "^2.21.0",
     "native-base": "^2.3.9",
     "react": "16.2.0",
     "react-native": "0.52.0",
@@ -27,6 +28,7 @@
     "react-native-easy-toast": "^1.0.9",
     "react-native-event-listeners": "^1.0.3",
     "react-native-eventemitter": "0.0.1",
+    "react-native-progress": "^3.4.0",
     "react-native-push-notification": "^3.0.2",
     "react-native-scrollable-tab-view": "^0.8.0",
     "react-native-storage": "^0.2.2",
