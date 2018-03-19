@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StyleSheet, View, Platform, Slider, Image, ActivityIndicator} from 'react-native';
+import { StyleSheet, View, Platform, Slider, Image, ActivityIndicator,  TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback} from 'react-native';
 import { Container, Header, Content, Icon , 
   H1, H2, H3, 
   Text, Button,
@@ -17,6 +17,13 @@ import moment from 'moment';
 import * as Progress from 'react-native-progress';
 
 import { stremingUrl, nowPlayingUrl } from '../assets/constants/url';
+
+//---------Import all images --------------
+import volMin from '../../res/assets/vol-min.imageset/vol-min.png';
+import volMax from '../../res/assets/vol-max.imageset/vol-max.png';
+import playImg from '../../res/assets/btn-play.imageset/btn-play2x.png';
+import stopImg from '../../res/assets/btn-pause.imageset/btn-pause2x.png';
+import backgroundImg from '../../res/assets/background.imageset/background.png';
 
 
 var playbackOptions = {
@@ -51,7 +58,7 @@ export default class Home extends React.Component {
 
   //Lifecycles  methods
   componentWillMount(){
-    buttonImg = [require('../../res/assets/play.png'), require('../../res/assets/stop.png')];
+    buttonImg = [playImg, stopImg];
   }
 
   componentDidMount() {
@@ -178,7 +185,7 @@ export default class Home extends React.Component {
                 height: '100%',
                 justifyContent: 'center',
               }}
-              source={require('../../res/assets/background.imageset/background.png')}
+              source={backgroundImg}
             />
 
 
@@ -209,21 +216,21 @@ export default class Home extends React.Component {
 
           {/* ---------------- Volume bar -----------------------------  */}
           <View style= {styles.row} >
-            <Image source={require('../../res/assets/vol-min.imageset/vol-min.png')}  resizeMode="contain" />
+            <Image source={volMin}  resizeMode="contain" />
             <Slider style={styles.seakBar}
                   step = { this.state.seackBarVal }
                   minimumValue = { 0 }
                   maximumValue = { 100 }
                   minimumTrackTintColor = "#009688"
             ></Slider>
-            <Image source={require('../../res/assets/vol-max.imageset/vol-max.png')} resizeMode="contain" />
+            <Image source={volMax} resizeMode="contain" />
           </View>
           {/* ----------------- END Volume bar -------------------------------- */}
 
           <View style={styles.playButtonContainer}>
-            <Button light onPress={() => this._onPressPlayHandler()} style={styles.playButton}>
+            <TouchableWithoutFeedback  onPress={() => this._onPressPlayHandler()} style={styles.playButton}>
               <Image source={buttonImg[this.state.playingButtonImg]} />
-            </Button>
+            </TouchableWithoutFeedback >
           </View>
 
       </View>
@@ -257,12 +264,13 @@ const styles = StyleSheet.create({
   playButton: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: 60,
-    width : 60
+    height: 80,
+    width : 80
   },
   
   imageAlbum:{
     flex:1, 
+    resizeMode: 'stretch'
   },
   
   seakBar:{
