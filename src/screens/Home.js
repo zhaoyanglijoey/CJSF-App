@@ -40,7 +40,7 @@ export default class Home extends React.Component {
     console.log(stremingUrl);
     
     this.state = {
-      seackBarVal : 40,
+      seackBarVal : 5,
       playingButtonImg : 0,
       IsPlaying: false,
       animating: false,
@@ -159,13 +159,32 @@ export default class Home extends React.Component {
    
   }
 
+  changeVolume(value) {
+    console.log(value);
+  }
+
   //-----------------------------HTML renderig --------------------------------------------
   render() {
+    const resizeMode = 'cover';
     return (
-      <Container>
-        <View style={styles.container}>
-        
-            <Image source={require('../../res/assets/splashscreen.png')} style={styles.imageAlbum} resizeMode="contain" />
+      <View style={styles.container}>
+             <Image
+              style={{
+                backgroundColor: '#ccc',
+                flex: 1,
+                resizeMode,
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                justifyContent: 'center',
+              }}
+              source={require('../../res/assets/background.imageset/background.png')}
+            />
+
+
+            <Image source={require('../../res/assets/album.png')} style={styles.imageAlbum} resizeMode="contain" />
+            
+            {/* ----------------Spinning wheel --------------------------- */}
             {this.state.animating ?  
               <ActivityIndicator
               animating = {true}
@@ -174,24 +193,42 @@ export default class Home extends React.Component {
               style = {styles.activityIndicator}/> : 
               <View></View>
             }
-            
-            <Text>
+            {/* ----------------------------- END speening wheel----------------------------- */}
+          
+            <Text style={{color: 'white'}}>
               {this.state.nowPlayingData.short_description}
             </Text>
-            <View style={{flexDirection: "row", position: "absolute",  left: 0, right: 0, justifyContent: 'space-between', padding: 8}}>
-              <Text > Left </Text>
-              <Progress.Bar  progress={0.3} width={200} style={styles.seakBar} />
-              <Text> Right </Text>
-            </View>
+          
+          {/* ---------------- Seek bar -----------------------------  */}
+          {/* <View style={styles.row}>
+            <Text > Left </Text>
+            <Progress.Bar  progress={0.3} width={200} style={styles.seakBar} />
+            <Text> Right </Text>
+          </View> */}
+          {/* ----------------- END Seek bar -------------------------------- */}
 
-            <View style={styles.playButtonContainer}>
-              <Button light onPress={() => this._onPressPlayHandler()}>
-                <Image source={buttonImg[this.state.playingButtonImg]} style={styles.playButton}/>
-              </Button>
-            </View>
+          {/* ---------------- Volume bar -----------------------------  */}
+          <View style= {styles.row} >
+          <Image source={require('../../res/assets/vol-max.imageset/vol-max.png')} resizeMode="contain" />
+            <Slider style={styles.seakBar}
+                  step = { this.state.seackBarVal }
+                  minimumValue = { 0 }
+                  maximumValue = { 100 }
+                  minimumTrackTintColor = "#009688"
+            ></Slider>
+            {/* <Image source={require('../../res/assets/vol-min.imageset/vol-min.png')}  resizeMode="contain" /> */}
+          </View>
+          {/* ----------------- END Volume bar -------------------------------- */}
 
-        </View>
-      </Container>
+
+
+          <View style={styles.playButtonContainer}>
+            <Button light onPress={() => this._onPressPlayHandler()}>
+              <Image source={buttonImg[this.state.playingButtonImg]} style={styles.playButton}/>
+            </Button>
+          </View>
+
+      </View>
     );
   }
 }
@@ -200,10 +237,15 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
   },  
+  row: {
+    flexDirection: "row",
+    width : '100%'
+  },
   playButton: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -215,6 +257,7 @@ const styles = StyleSheet.create({
   },
   seakBar:{
     borderColor: 'black',
+    width: '80%'
   },
   playButtonContainer: {
     padding: 20,
