@@ -195,7 +195,7 @@ export default class Home extends React.Component {
             }
             {/* ----------------------------- END speening wheel----------------------------- */}
           
-            <Text style={{color: 'white'}}>
+            <Text style={styles.currentPlayText}>
               {this.state.nowPlayingData.short_description}
             </Text>
           
@@ -209,22 +209,20 @@ export default class Home extends React.Component {
 
           {/* ---------------- Volume bar -----------------------------  */}
           <View style= {styles.row} >
-          <Image source={require('../../res/assets/vol-max.imageset/vol-max.png')} resizeMode="contain" />
+            <Image source={require('../../res/assets/vol-min.imageset/vol-min.png')}  resizeMode="contain" />
             <Slider style={styles.seakBar}
                   step = { this.state.seackBarVal }
                   minimumValue = { 0 }
                   maximumValue = { 100 }
                   minimumTrackTintColor = "#009688"
             ></Slider>
-            {/* <Image source={require('../../res/assets/vol-min.imageset/vol-min.png')}  resizeMode="contain" /> */}
+            <Image source={require('../../res/assets/vol-max.imageset/vol-max.png')} resizeMode="contain" />
           </View>
           {/* ----------------- END Volume bar -------------------------------- */}
 
-
-
           <View style={styles.playButtonContainer}>
-            <Button light onPress={() => this._onPressPlayHandler()}>
-              <Image source={buttonImg[this.state.playingButtonImg]} style={styles.playButton}/>
+            <Button light onPress={() => this._onPressPlayHandler()} style={styles.playButton}>
+              <Image source={buttonImg[this.state.playingButtonImg]} />
             </Button>
           </View>
 
@@ -235,6 +233,7 @@ export default class Home extends React.Component {
 
 //-------------------------------STYLES-------------------------------------------------------
 const styles = StyleSheet.create({
+  
   container: {
     flex: 1,
     flexDirection: 'column',
@@ -242,27 +241,40 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },  
+  
   row: {
     flexDirection: "row",
-    width : '100%'
+    width : '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  currentPlayText: {
+    color: 'white',
+    fontSize: 22,
+    padding : 20,
+    paddingTop: 0
   },
   playButton: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: 50,
-    width : 50
+    height: 60,
+    width : 60
   },
+  
   imageAlbum:{
     flex:1, 
   },
+  
   seakBar:{
     borderColor: 'black',
-    width: '80%'
+    width: '80%',
+    padding : 10
   },
+
   playButtonContainer: {
     padding: 20,
-
   },
+
   activityIndicator: {
     position: 'absolute',
     left: 0,
@@ -271,7 +283,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     alignItems: 'center',
     justifyContent: 'center'
-
   }
 
 });
