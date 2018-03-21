@@ -5,22 +5,17 @@ import { StyleSheet, View, ActivityIndicator, TouchableOpacity, Alert, NetInfo,
 import { Container, Text, Header, Content, Button, Icon, List, ListItem,
          Left, Body, Right, Tab, Tabs, Root, ActionSheet, } from "native-base";
 import { ActionSheetProvider, connectActionSheet } from '@expo/react-native-action-sheet';
-import { EventRegister } from 'react-native-event-listeners'
-import { pushNotifications } from '../services';
-import PushNotification from 'react-native-push-notification'
-import Toast, {DURATION} from 'react-native-easy-toast'
+import { EventRegister } from 'react-native-event-listeners';
+import PushNotification from 'react-native-push-notification';
 import { ScaledSheet, scale, verticalScale, moderateScale } from 'react-native-size-matters';
-import { weeklyScheduleUrl } from '../assets/constants/url.js' 
-import Favorites from './Favorites.js'
-
+import { weeklyScheduleUrl } from '../assets/constants/url.js' ;
+import { addNotification, addFavorite } from '../util/Functions';
 
 @connectActionSheet
 export default class Schedule extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isLoading: true, isConnected: false };
-    // this._connectionChangeHandler = this._connectionChangeHandler.bind(this);
-    this.addedToFavorite = false;
   }
 
   componentDidMount() {
@@ -84,71 +79,25 @@ export default class Schedule extends React.Component {
           isConnected: true
         })
       }
-      // else{
-      //   this.setState({
-      //     isConnected: false
-      //   })
-      //   return;
-      // }
     });
-
-
   }
 
   _options = ["Details", "Add to favorite", "Cancel"];
 
-  _addFavorite = item => {
-    AsyncStorage.setItem(item.program_id, JSON.stringify(item))
-    .then(
-      () => {
-        var now = new Date();
-        var scheduleDay;
-        switch(item.day){
-          case 'Sunday': scheduleDay = 0; break;
-          case 'Monday': scheduleDay = 1; break;
-          case 'Tuesday': scheduleDay = 2; break;
-          case 'Wednesday': scheduleDay = 3; break;
-          case 'Thursday': scheduleDay = 4; break;
-          case 'Friday': scheduleDay = 5; break;
-          case 'Saturday': scheduleDay = 6; break;
-        }
-        var hour = parseInt(item.start_time);
-        var minute = parseInt(item.start_time.slice(4));
-        if(hour === NaN || minute == NaN){
-          console.warn('set notification failed: Invalid start time');
-        }
-        var scheduleDate = new Date(now.getFullYear(), now.getMonth(),
-                                    now.getDate() + (scheduleDay - now.getDay()), hour, minute, 0, 0);
-        scheduleDate = new Date(scheduleDate - 10 * 60 * 1000);
-
-        if(scheduleDate < now){
-          scheduleDate = new Date(scheduleDate.getFullYear(), scheduleDate.getMonth(),
-                                  scheduleDate.getDate() + 7, scheduleDate.getHours, scheduleDate.getMinutes, 0, 0);
-        }
-        // scheduleDate = new Date(Date.now() + 10 * 1000); //for test
-        PushNotification.localNotificationSchedule({
-          id: item.program_id,
-          title: item.title,
-          message: 'Starting at ' + item.start_time + '!',
-          playSound: true,
-          repeatType: 'week',
-          date: scheduleDate,
-          // ongoing: false,
-          //required for iOS to cancel notification
-          // userInfo: {
-          //   id: item,program_id,
-          // },
-          // number: 1,
-        })
-        this.refs.toast.show(item.title + ' added to favorites', DURATION.LENGTH_LONG);
-        EventRegister.emit('favoriteUpdate', 'add worked!!');
-      }
-    ).catch(
-      error => {
-        console.warn(error);
-      }
-    )
-  }
+  // _addFavorite = item => {
+  //   AsyncStorage.setItem(item.program_id, JSON.stringify(item))
+  //   .then(
+  //     () => {
+  //       addNotification(item);
+  //       this.refs.toast.show(item.title + ' added to favorites', DURATION.LENGTH_LONG);
+  //       EventRegister.emit('favoriteUpdate', '');
+  //     }
+  //   ).catch(
+  //     error => {
+  //       console.warn(error);
+  //     }
+  //   )
+  // }
 
   _onPressEntry = item => {
     this.props.showActionSheetWithOptions(
@@ -161,7 +110,7 @@ export default class Schedule extends React.Component {
           Alert.alert(item.title, item.description);
         }
         if (buttonIndex === 1) {
-          this._addFavorite(item);
+          addFavorite(item);
         }
       }
     );
@@ -267,14 +216,6 @@ export default class Schedule extends React.Component {
               />
             </Tab>
           </Tabs>
-        <Toast
-          ref="toast"
-          position='bottom'
-          positionValue={200}
-          fadeInDuration={250}
-          fadeOutDuration={500}
-          opacity={0.8}
-        />
         </View>
     );
   }

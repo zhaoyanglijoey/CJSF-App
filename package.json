@@ -30,6 +30,7 @@
     "react-native-eventemitter": "0.0.1",
     "react-native-progress": "^3.4.0",
     "react-native-push-notification": "^3.0.2",
+    "react-native-root-toast": "^3.0.1",
     "react-native-scrollable-tab-view": "^0.8.0",
     "react-native-size-matters": "^0.1.0",
     "react-native-storage": "^0.2.2",

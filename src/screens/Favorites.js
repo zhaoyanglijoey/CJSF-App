@@ -1,12 +1,14 @@
 import React from 'react';
 
-import { StyleSheet, View, Platform, AsyncStorage, ListView, ActivityIndicator, Alert } from 'react-native';
+import { StyleSheet, View, Platform, AsyncStorage, ListView, ActivityIndicator, Alert, NetInfo } from 'react-native';
 import { Container, Text, Header, Content, Icon, List, ListItem, Root, ActionSheet, Left, Body, Right, Button } from 'native-base';
-// import { ActionSheetProvider, connectActionSheet } from '@expo/react-native-action-sheet';
 import { EventRegister } from 'react-native-event-listeners'
 import PushNotification from 'react-native-push-notification'
-import Toast, {DURATION} from 'react-native-easy-toast'
 import { ScaledSheet, scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { weeklyScheduleUrl } from '../assets/constants/url.js' 
+import { addNotification } from '../util/Functions';
+import { pushNotifications } from '../services/index.js';
+import Toast from 'react-native-root-toast';
 
 function stringToDay(str) {
   switch(str){
@@ -21,19 +23,83 @@ function stringToDay(str) {
   }
 }
 
-// @connectActionSheet
 export default class Favorites extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = { 
       isLoading: true,
+      isConnected: false,
       data: [],
+      scheduleData: null,
     };
     this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
   }
 
   componentDidMount() {
+    NetInfo.addEventListener('connectionChange', this._fetchData);
+
+    this._fetchData();
+
+    this.listener = EventRegister.addEventListener('favoriteUpdate', this._updateContent);
+  }
+
+  componentWillUnmount() {
+    NetInfo.removeEventListener('connectionChange', this._fetchData);
+    EventRegister.removeEventListener(this.listener);
+  }
+
+  _retrieveFavorites = (items) => {
+    var res = [];
+    for(var i in items){
+      var searchArray = this.state.scheduleData[items[i].day];
+      var found = false;
+      for(var si in searchArray ){
+        if(items[i].program_id === searchArray[si].program_id){
+          if(items[i].start_time !== searchArray[si].start_time){
+            PushNotification.cancelLocalNotifications({id: items[i].program_id});
+            addNotification(searchArray[si]);
+          }
+          found = true;
+          res.push(searchArray[si]);
+        }
+      }
+      if(!found){
+        pushNotifications.cancelLocalNotifications({id: items[i].program_id});
+      }
+    }
+    return res;
+  }
+
+  _fetchData = () => {
+    NetInfo.isConnected.fetch().then(isConnected => {
+      if(isConnected){
+        fetch(weeklyScheduleUrl)
+        .then(response => {
+          if (response.status === 200) {
+            return response.json();
+          } else {
+            throw new Error('Something went wrong on api server!');
+          }
+        })
+        .then(responseJson => {
+          this.setState({
+            scheduleData: responseJson,
+          });
+          this._updateContent();
+        })
+        .catch(error => {
+          console.error(error);
+        });
+        this.setState({
+          isConnected: true,
+        })
+      }
+    });
+  }
+
+
+  _updateContent = () => {
     AsyncStorage.getAllKeys()
     .then(keys => {
       AsyncStorage.multiGet(keys)
@@ -41,7 +107,14 @@ export default class Favorites extends React.Component {
           return pairs.map((cur, i, arr) => {
             return JSON.parse(cur[1]);
           })
-        }).then(res => {
+        })
+        /*
+        Problem to sychronize with the website: same program played multiple times in a week
+        */
+        // .then(items => {          
+        //   return this._retrieveFavorites(items);
+        // })
+        .then(res => {
           res.sort( (a, b) => {
             if(stringToDay(a.day) === stringToDay(b.day)){
               var hourA = parseInt(a.start_time);
@@ -58,78 +131,13 @@ export default class Favorites extends React.Component {
             isLoading: false,
             data: res
           })
-        })
-    }).catch(error => {
-      console.warn(error);
-    })
-
-    this.listener = EventRegister.addEventListener('favoriteUpdate', this._updateContent);
-  }
-
-  componentWillUnmount() {
-    EventRegister.removeEventListener(this.listener);
-  }
-
-  _updateContent = () => {
-    AsyncStorage.getAllKeys()
-    .then(keys => {
-      AsyncStorage.multiGet(keys)
-        .then(pairs => {
-          return pairs.map((cur, i, arr) => {
-            return JSON.parse(cur[1]);
-          })
-        }).then(res => {
-          res.sort( (a, b) => {
-            if(stringToDay(a.day) === stringToDay(b.day)){
-              var hourA = parseInt(a.start_time);
-              var minuteA = parseInt(a.start_time.slice(4));
-              var hourB = parseInt(b.start_time);
-              var minuteB = parseInt(b.start_time.slice(4));
-              return hourA === hourB? minuteA - minuteB : hourA - hourB;
-            }
-            else{
-              return stringToDay(a.day) - stringToDay(b.day);
-            }
-          } )
-          this.setState({
-            data: res
-          })
+        }).catch(error => {
+          console.log(error);
         })
     }).catch(error => {
       console.warn(error);
     })
   }
-  
-  // _options = ["Details", "Remove from favorite", "Cancel"];
-  // TODO: turn off notification 
-  // Maybe using a clock icon
-
-  // _onPressEntry = item => {
-  //   this.props.showActionSheetWithOptions(
-  //     {
-  //       options: this._options,
-  //       cancelButtonIndex: 2,
-  //       destructiveButtonIndex: 1,
-  //       // title: item.title
-  //     },
-  //     buttonIndex => {
-  //       if (buttonIndex === 0) {
-  //         Alert.alert(item.title, item.description);
-  //       }
-  //       if (buttonIndex === 1) {
-  //         AsyncStorage.removeItem(item.program_id)
-  //         .then(() => {
-  //           PushNotification.cancelLocalNotifications({id: item.program_id});
-  //           this.refs.toast.show(item.title + ' removed from favorites', DURATION.LENGTH_LONG);
-  //           this._updateContent();
-  //         })
-  //         .catch(error => {
-  //           console.warn(error);
-  //         })
-  //       } 
-  //     }
-  //   )
-  // }
 
   _onPressDelete = (item, secId, rowId, rowMap) => {
     Alert.alert(
@@ -146,7 +154,12 @@ export default class Favorites extends React.Component {
     AsyncStorage.removeItem(item.program_id)
     .then(() => {
       PushNotification.cancelLocalNotifications({id: item.program_id});
-      this.refs.toast.show(item.title + ' removed from favorites', DURATION.LENGTH_LONG);
+      Toast.show(item.title + ' removed from favorites', {
+        position: Toast.positions.BOTTOM,
+        duration: Toast.durations.LONG,
+        animation: true,
+        shadow: true,
+        })
       rowMap[`${secId}${rowId}`].props.closeRow();    
       this._updateContent();
     })
@@ -155,26 +168,6 @@ export default class Favorites extends React.Component {
     })
   }
 
-  // removeItem = (item) => {
-  //   Alert.alert(
-  //     'Remove from favorites', 
-  //     'Are you sure you want to remove "' + item.title + '" from favorites?',
-  //     [
-  //       {text: 'Cancel'},
-  //       {text: 'Yes', onPress: () => {
-  //         AsyncStorage.removeItem(item.program_id)
-  //         .then(() => {
-  //           PushNotification.cancelLocalNotifications({id: item.program_id});
-  //           this.refs.toast.show(item.title + ' removed from favorites', DURATION.LENGTH_LONG);
-  //           this._updateContent();
-  //         })
-  //         .catch(error => {
-  //           console.warn(error);
-  //         })
-  //       }}
-  //     ]
-  //   );
-  // }
 
   _renderItem = item => (
     <ListItem style={styles.listItem}>
@@ -193,6 +186,18 @@ export default class Favorites extends React.Component {
 
 
   render() {
+    if(!this.state.isConnected){
+      return (
+        <View style={{
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'center',
+          }}>
+          <Text>Network unavailable</Text>
+        </View>
+      )
+    }
+
     if (this.state.isLoading) {
       return (
         <View style={styles.centerContainer}>
@@ -230,14 +235,6 @@ export default class Favorites extends React.Component {
               </Button>}
             leftOpenValue={75}
             rightOpenValue={-75}
-          />
-          <Toast
-            ref="toast"
-            position='bottom'
-            positionValue={200}
-            fadeInDuration={500}
-            fadeOutDuration={500}
-            opacity={0.8}
           />
         </View>
     );
