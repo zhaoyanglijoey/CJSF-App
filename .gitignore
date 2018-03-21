@@ -46,7 +46,7 @@ project.xcworkspace
 # Android/IntelliJ
 build/
 .idea
-/android/.gradle/
+android/.gradle/
 local.properties
 *.iml
 
