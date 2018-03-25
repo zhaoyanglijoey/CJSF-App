@@ -12,20 +12,20 @@ import About from '../screens/About';
 //Styles fot the bottom nav bad icons
 var styles = StyleSheet.create({
     container: {
-        
+
     },
     mainHeader: {
         //paddingTop: (Platform.OS === 'android') ? Expo.Constants.statusBarHeight : 20,
         //height: ( (Platform.OS === 'android') ? 56 : 44 ) + Expo.Constants.statusBarHeight
         backgroundColor: '#38404c',
-        
+
     },
     headerTitle: {
         alignSelf:'center',
         textAlign: 'center',
         width: '100%',
         color : 'white'
-        
+
     },
 });
 

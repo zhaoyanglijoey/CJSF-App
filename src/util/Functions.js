@@ -26,7 +26,7 @@ const addNotification = (item) => {
 
     if(scheduleDate < now){
       scheduleDate = new Date(scheduleDate.getFullYear(), scheduleDate.getMonth(),
-                              scheduleDate.getDate() + 7, scheduleDate.getHours, scheduleDate.getMinutes, 0, 0);
+                              scheduleDate.getDate() + 7, scheduleDate.getHours(), scheduleDate.getMinutes(), 0, 0);
     }
     // scheduleDate = new Date(Date.now() + 10 * 1000); //for test
     PushNotification.localNotificationSchedule({
@@ -61,14 +61,14 @@ const addFavorite = item => {
       }
     ).catch(
       error => {
-        console.warn(error);
+        console.log(error);
       }
     )
 }
 
 const removeFavorite = item => {
     Alert.alert(
-        'Remove from favorites', 
+        'Remove from favorites',
         'Are you sure you want to remove "' + item.title + '" from favorites?',
         [
           {text: 'Cancel'},

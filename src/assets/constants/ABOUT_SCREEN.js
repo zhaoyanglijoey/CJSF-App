@@ -8,6 +8,8 @@ import {scale, verticalScale, moderateScale} from '../../services/scaling.js'
 
 /* Text and Constants for About Screen */
 export const LOGO = require('../../../res/assets/ic_launcher-web.png');
+export const BACKGROUND =
+  require('../../../res/assets/background.png');
 
 export const LOGO_HEIGHT = verticalScale(260);
 export const LOGO_WIDTH = moderateScale(260);
