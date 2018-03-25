@@ -29,8 +29,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
+    flex: 1,
     width: LOGO_HEIGHT,
     height: LOGO_WIDTH,
+    resizeMode: 'contain',
   },
   header: {
     fontSize: TEXT_SIZE_HEADER,

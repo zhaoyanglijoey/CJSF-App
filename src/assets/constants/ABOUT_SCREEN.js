@@ -1,14 +1,19 @@
 import React from 'react';
-import { Text, Linking } from 'react-native';
+import {
+  Text,
+  Linking,
+  PixelRatio,
+} from 'react-native';
+import {scale, verticalScale, moderateScale} from '../../services/scaling.js'
 
-/* Constant resources used by the application */
-// Text and Constants for About Screen //
+/* Text and Constants for About Screen */
 export const LOGO = require('../../../res/assets/ic_launcher-web.png');
-export const LOGO_HEIGHT = 260;
-export const LOGO_WIDTH = 260;
 
-export const TEXT_SIZE_HEADER=14;
-export const TEXT_SIZE_BODY=12;
+export const LOGO_HEIGHT = verticalScale(260);
+export const LOGO_WIDTH = moderateScale(260);
+
+export const TEXT_SIZE_HEADER = scale(16);
+export const TEXT_SIZE_BODY = scale(12);
 
 export const ABOUT_HEADER1='Diverse * Independent * Yours'
 export const ABOUT_BODY1='CJSF 90.1 FM is Vancouver’s independent indie music, '
