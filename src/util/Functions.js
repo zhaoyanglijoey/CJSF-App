@@ -26,7 +26,7 @@ const addNotification = (item) => {
 
     if(scheduleDate < now){
       scheduleDate = new Date(scheduleDate.getFullYear(), scheduleDate.getMonth(),
-                              scheduleDate.getDate() + 7, scheduleDate.getHours, scheduleDate.getMinutes, 0, 0);
+                              scheduleDate.getDate() + 7, scheduleDate.getHours(), scheduleDate.getMinutes(), 0, 0);
     }
     // scheduleDate = new Date(Date.now() + 10 * 1000); //for test
     PushNotification.localNotificationSchedule({
