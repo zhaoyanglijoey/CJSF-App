@@ -8,8 +8,7 @@ import {scale, verticalScale, moderateScale} from '../../services/scaling.js'
 
 /* Text and Constants for About Screen */
 export const LOGO = require('../../../res/assets/ic_launcher-web.png');
-export const BACKGROUND =
-  require('../../../res/assets/background.png');
+export const BACKGROUND = require('../../../res/assets/background.png');
 
 export const LOGO_HEIGHT = verticalScale(260);
 export const LOGO_WIDTH = moderateScale(260);
@@ -27,7 +26,7 @@ export const ABOUT_HEADER2='Be the Media'
 
 const ABOUT_BODY2_1='Want to get involved, attend one of our Orientations'
 + ' for New Volunteers. There are several every month check the website at';
-const CJSF_URL = 'http://www.cjsf.ca/';
+const CJSF_URL = 'https://www.cjsf.ca/';
 const ABOUT_BODY2_2= 'for the next upcoming orientations.';
 
 export const ABOUT_BODY2 =
