@@ -4,6 +4,11 @@ import { AsyncStorage, Alert } from 'react-native';
 import Toast from 'react-native-root-toast';
 
 const addNotification = (item) => {
+  for(var i in item.intervals){
+    item.day = item.intervals[i][0];
+    item.start_time = item.intervals[i][1];
+    item.end_time = item.intervals[i][2];
+
     var now = new Date();
     var scheduleDay;
     switch(item.day){
@@ -30,27 +35,29 @@ const addNotification = (item) => {
     }
     // scheduleDate = new Date(Date.now() + 10 * 1000); //for test
     PushNotification.localNotificationSchedule({
-      id: item.program_id,
+      // id: item.program_id,
       title: item.title,
       message: 'Starting at ' + item.start_time + '!',
       playSound: true,
       repeatType: 'week',
       date: scheduleDate,
       // ongoing: false,
+      
       //required for iOS to cancel notification
-      // userInfo: {
-      //   id: item,program_id,
-      // },
-      // number: 1,
+      userInfo: {
+        id: item.program_id,
+      },
+      number: 1,
     })
-    console.log('notification created');
+    console.log('notification created ' + item.title + ' ' + item.day + ' ' + item.start_time + ' ');
+  }
 }
 
 const addFavorite = item => {
-    AsyncStorage.setItem(item.program_id, JSON.stringify(item))
+    AsyncStorage.setItem(item.program_id, item.program_id)
     .then(
       () => {
-        addNotification(item);
+        // addNotification(item);
         Toast.show(item.title + ' added to favorites', {
             position: Toast.positions.BOTTOM,
             duration: Toast.durations.LONG,
@@ -75,7 +82,7 @@ const removeFavorite = item => {
           {text: 'Yes', onPress: () => {
             AsyncStorage.removeItem(item.program_id)
             .then(() => {
-              PushNotification.cancelLocalNotifications({id: item.program_id});
+              // PushNotification.cancelLocalNotifications({id: item.program_id});
               Toast.show(item.title + ' removed from favorites', {
                 position: Toast.positions.BOTTOM,
                 duration: Toast.durations.LONG,
