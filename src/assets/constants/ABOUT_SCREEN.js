@@ -4,7 +4,7 @@ import {
   Linking,
   PixelRatio,
 } from 'react-native';
-import {scale, verticalScale, moderateScale} from '../../services/scaling.js'
+import {scale, verticalScale, moderateScale} from 'react-native-size-matters'
 
 /* Text and Constants for About Screen */
 export const LOGO = require('../../../res/assets/ic_launcher-web.png');
