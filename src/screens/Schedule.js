@@ -137,7 +137,7 @@ export default class Schedule extends React.Component {
           alignItems: 'center',
           justifyContent: 'center',
           }}>
-          <ActivityIndicator 
+          <ActivityIndicator
             size = 'large'
           />
         </View>
@@ -229,11 +229,13 @@ const styles = ScaledSheet.create({
     backgroundColor: 'white'
   },
   tabText: {
-    color: 'black'
+    color: 'black',
+    fontSize: '16@s',
   },
   activeTabText: {
     color: 'blue',
     fontWeight: 'bold',
+    fontSize: '16@s',
   },
   tabUnderLine: {
     borderBottomWidth: 2,

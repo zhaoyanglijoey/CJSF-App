@@ -12,8 +12,10 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
-// added for push notification 
+// added for push notification
 #import <React/RCTPushNotificationManager.h>
+// Added for Splash Screen
+#import "SplashScreen.h"
 
 @implementation AppDelegate
 
@@ -34,6 +36,7 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  [SplashScreen show];  // Added for SplashScreen
   return YES;
 }
 
