@@ -25,19 +25,17 @@ export default class Schedule extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: 'black',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
   },
   background: {
-    backgroundColor: '#000',
     flex: 1,
     position: 'absolute',
     opacity: 0.7,
     width: '100%',
     height: '100%',
-    justifyContent: 'center',
   },
   logo: {
     flex: 1,
