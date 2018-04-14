@@ -84,21 +84,6 @@ export default class Schedule extends React.Component {
 
   _options = ["Details", "Add to favorite", "Cancel"];
 
-  // _addFavorite = item => {
-  //   AsyncStorage.setItem(item.program_id, JSON.stringify(item))
-  //   .then(
-  //     () => {
-  //       addNotification(item);
-  //       this.refs.toast.show(item.title + ' added to favorites', DURATION.LENGTH_LONG);
-  //       EventRegister.emit('favoriteUpdate', '');
-  //     }
-  //   ).catch(
-  //     error => {
-  //       console.warn(error);
-  //     }
-  //   )
-  // }
-
   _onPressEntry = item => {
     this.props.showActionSheetWithOptions(
       {
@@ -115,10 +100,6 @@ export default class Schedule extends React.Component {
       }
     );
   }
-
-  // _onPressIcon = item => {
-  //   if(this.addedToFavorite)
-  // }
 
   _renderItem = item => (
     <ListItem style={styles.listItem}>
