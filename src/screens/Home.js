@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StyleSheet, View, Platform, Slider, Image, ActivityIndicator,  TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback} from 'react-native';
+import { StyleSheet, View, Platform, Slider, Image, ActivityIndicator,  TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback, NetInfo} from 'react-native';
 import { Container, Header, Content, Icon , 
   H1, H2, H3, 
   Text, Button,
@@ -17,6 +17,7 @@ import moment from 'moment';
 import * as Progress from 'react-native-progress';
 
 import { stremingUrl, nowPlayingUrl } from '../assets/constants/url';
+import Toast from 'react-native-root-toast';  // TO DO:  Change it to use better library or custom native toast 
 
 //---------Import all images --------------
 import volMin from '../../res/assets/vol-min.imageset/vol-min.png';
@@ -52,35 +53,76 @@ export default class Home extends React.Component {
       IsPlaying: false,
       animating: false,
       nowPlayingData : { short_description : "Loading"},
-      seeakBarVal : 10
+      seeakBarVal : 10,
+      netAvailble: false
     }
   }
 
   //Lifecycles  methods
   componentWillMount(){
     buttonImg = [playImg, stopImg];
+
+    console.log("Player status : " + player.state);
+
+    if ( player.state == 4){
+      this.setState({
+        IsPlaying : true
+      });
+    }
   }
 
   componentDidMount() {
-
+    console.log("Player status : " + player.state);
     //--------------------------------------------Load now playing data to display--------------------------------
-    return fetch(nowPlayingUrl)
-      .then(response => response.json())
-      .then(responseJson => {
-        this.setState({
-          nowPlayingData: responseJson
+    NetInfo.getConnectionInfo().then((connectionInfo) => {
+      if ( connectionInfo.type == 'cellular' || connectionInfo.type == 'wifi' ){
+        Toast.show('Stremming over ' + connectionInfo.type, {
+          position: Toast.positions.TOP,
+          duration: Toast.durations.LONG,
+          animation: true,
+          shadow: true,
+          toastStyle,
         });
-        console.log(responseJson);
-        this.calculateTime(responseJson.start_time, responseJson.end_time);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-    
-    //--------------------------------------------Prepare player to stream--------------------------------
-    player.prepare((err)=> {
-      console.log(err);
+
+        this.setState({
+          netAvailble : true
+        });
+
+        return fetch(nowPlayingUrl)
+        .then(response => response.json())
+        .then(responseJson => {
+          this.setState({
+            nowPlayingData: responseJson
+          });
+          console.log(responseJson);
+          this.calculateTime(responseJson.start_time, responseJson.end_time);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+        
+        //--------------------------------------------Prepare player to stream--------------------------------
+        player.prepare((err)=> {
+          console.log(err);
+        });
+
+      }else {
+        this.setState({
+          netAvailble : false
+        });
+
+        Toast.show('No internet connection', {
+          position: Toast.positions.TOP,
+          duration: Toast.durations.LONG,
+          animation: true,
+          shadow: true,
+          toastStyle,
+        });
+      }
+      
     });
+
+   
 
   }
 
@@ -127,43 +169,52 @@ export default class Home extends React.Component {
   startActivityIndicator(){
     this.state.animating = true;
     this.setState({ animating: true });
-    console.log("Starting now!: "+ this.state.animating);
   }
 
   _onPressPlayHandler(){
-    console.log("Play And Pause!!");
-    console.log("Player can play: player.canPlay");
-    if (player.canPlay){
-      this.playAndPause();
-    }else {
-      this.startActivityIndicator();
-      console.log("Animating! = "+ this.state.animating);
-      player.prepare((err) => {
-        console.log("Error: "+ err);
-        this.closeActivityIndicator();
+    if (this.state.netAvailble){
+      if (player.canPlay){
         this.playAndPause();
+      }else {
+        this.startActivityIndicator();
+        console.log("Animating! = "+ this.state.animating);
+        player.prepare((err) => {
+          console.log("Error: "+ err);
+          this.closeActivityIndicator();
+          this.playAndPause();
+        });
+      }
+    }else{
+      Toast.show('No internet connection', {
+        position: Toast.positions.TOP,
+        duration: Toast.durations.LONG,
+        animation: true,
+        shadow: true,
+        toastStyle,
       });
     }
+    
   }
 
   playAndPause(){
-    player.playPause((err, playing) => {
-      this.setState({IsPlaying: !playing});
-
-      if (err) console.log("Error: " + err);
-      console.log("Playing: "+ this.state.IsPlaying);
-      
-      if(this.state.playingButtonImg == 0){
-        this.state.playingButtonImg = 1
-      }else{
-        this.state.playingButtonImg = 0
-      }
-
-      this.setState((prevState, props) => {
-        return {playingButtonImg: this.state.playingButtonImg};
+    if (this.state.netAvailble){
+      player.playPause((err, playing) => {
+        this.setState({IsPlaying: !playing});
+  
+        if (err) console.log("Error: " + err);
+        console.log("Playing: "+ this.state.IsPlaying);
+        
+        if(this.state.playingButtonImg == 0){
+          this.state.playingButtonImg = 1
+        }else{
+          this.state.playingButtonImg = 0
+        }
+  
+        this.setState((prevState, props) => {
+          return {playingButtonImg: this.state.playingButtonImg};
+        });
       });
-    });
-   
+    }
   }
 
   changeVolume(value) {
@@ -215,7 +266,7 @@ export default class Home extends React.Component {
           {/* ----------------- END Seek bar -------------------------------- */}
 
           {/* ---------------- Volume bar -----------------------------  */}
-          <View style= {styles.row} >
+          {/* <View style= {styles.row} >
             <Image source={volMin}  resizeMode="contain" />
             <Slider style={styles.seakBar}
                   step = { this.state.seackBarVal }
@@ -224,7 +275,7 @@ export default class Home extends React.Component {
                   minimumTrackTintColor = "#009688"
             ></Slider>
             <Image source={volMax} resizeMode="contain" />
-          </View>
+          </View> */}
           {/* ----------------- END Volume bar -------------------------------- */}
 
           <View style={styles.playButtonContainer}>
@@ -259,7 +310,8 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 22,
     padding : 20,
-    paddingTop: 0
+    paddingTop: 0,
+    textAlign: 'center'
   },
   playButton: {
     justifyContent: 'center',
@@ -291,7 +343,16 @@ const styles = StyleSheet.create({
     bottom: 0,
     alignItems: 'center',
     justifyContent: 'center'
-  }
-
+  },
 });
 
+const  toastStyle =  {
+  backgroundColor: "#4ADDFB",
+  width: 300,
+  height: Platform.OS === ("ios") ? 50 : 100,
+  color: "#ffffff",
+  fontSize: 15,
+  lineHeight: 2,
+  lines: 4,
+  borderRadius: 15,
+}
