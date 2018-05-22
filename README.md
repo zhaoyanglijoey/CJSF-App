@@ -1,16 +1,9 @@
 ## CJSF Radio App
-http://www.cjsf.ca/
+
+#### http://www.cjsf.ca/
 ------
 
-<img src='./screenshots/home.png' height='160' width='90' /> 
-<img src='./screenshots/favorites.png' height='160' width='90' />
-<img src='./screenshots/schedule.png' height='160' width='90' />
-<img src='./screenshots/about.png' height='160' width='90' />
-<img src='./screenshots/actionsheet.png' height='160' width='90' />
-<img src='./screenshots/toastadd.png' height='160' width='90' />
-<img src='./screenshots/info.png' height='160' width='90' />
-<img src='./screenshots/remove.png' height='160' width='90' />
-<img src='./screenshots/toastremove.png' height='160' width='90' />
+<img src='./screenshots/home.png' height='320' width='180' /> <img src='./screenshots/favorites.png' height='320' width='180' /> <img src='./screenshots/schedule.png' height='320' width='180' /> <img src='./screenshots/about.png' height='320' width='180' /> <img src='./screenshots/actionsheet.png' height='320' width='180' /> <img src='./screenshots/toastadd.png' height='320' width='180' /> <img src='./screenshots/info.png' height='320' width='180' /> <img src='./screenshots/remove.png' height='320' width='180' /> <img src='./screenshots/toastremove.png' height='320' width='180' />
 
 #### How to run:
 ------
