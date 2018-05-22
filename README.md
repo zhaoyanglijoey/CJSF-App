@@ -1,19 +1,22 @@
-### CJSF radio App 
-======
-
-##### To do list:
+## CJSF Radio App
+http://www.cjsf.ca/ 
 ------
-- [x] Add project skeleton
-- [ ] Add UI mock up 
-- [ ] Add Color theam
-- [ ] Integrate media player
-- [ ] Media player push notification
 
-##### How to run:
+![home](./screenshots/home.png)
+![favorite](./screenshots/favorite.png)
+![schedule](./screenshots/schedule.png)
+![about](./screenshots/about.png)
+![actionsheet](./screenshots/actionsheet.png)
+![toastadd](./screenshots/toastadd.png)
+![info](./screenshots/info.png)
+![remove](./screenshots/remove.png)
+![toastremove](./screenshots/toastremove.png)
+
+#### How to run:
 ------
 - Install node
-- Clone project `git clone git@gitlab.com:ahadc/CJSFApp.git`
-- `cd CJSFApp`
+- Clone project `git clone https://github.com/Joey-ZhaoyangLi/CJSF-App.git`
+- `cd CJSF-App`
 - `npm install`
 - Open android studio and open emmulator or xcode emmulator 
 - run `npm run android`
