@@ -1,16 +1,16 @@
 ## CJSF Radio App
-http://www.cjsf.ca/ 
+http://www.cjsf.ca/
 ------
 
-![home](./screenshots/home.png)
-![favorite](./screenshots/favorite.png)
-![schedule](./screenshots/schedule.png)
-![about](./screenshots/about.png)
-![actionsheet](./screenshots/actionsheet.png)
-![toastadd](./screenshots/toastadd.png)
-![info](./screenshots/info.png)
-![remove](./screenshots/remove.png)
-![toastremove](./screenshots/toastremove.png)
+<img src='./screenshots/home.png' height='160' width='90' /> 
+<img src='./screenshots/favorites.png' height='160' width='90' />
+<img src='./screenshots/schedule.png' height='160' width='90' />
+<img src='./screenshots/about.png' height='160' width='90' />
+<img src='./screenshots/actionsheet.png' height='160' width='90' />
+<img src='./screenshots/toastadd.png' height='160' width='90' />
+<img src='./screenshots/info.png' height='160' width='90' />
+<img src='./screenshots/remove.png' height='160' width='90' />
+<img src='./screenshots/toastremove.png' height='160' width='90' />
 
 #### How to run:
 ------
@@ -18,9 +18,9 @@ http://www.cjsf.ca/
 - Clone project `git clone https://github.com/Joey-ZhaoyangLi/CJSF-App.git`
 - `cd CJSF-App`
 - `npm install`
-- Open android studio and open emmulator or xcode emmulator 
+- Open android studio and open emmulator or xcode emmulator
 - run `npm run android`
-- You should have server running and you should see apk or project installed on emmulator 
+- You should have server running and you should see apk or project installed on emmulator
 
 ##### Handy shortcuts:
 ------
