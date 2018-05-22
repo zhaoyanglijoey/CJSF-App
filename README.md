@@ -3,7 +3,7 @@
 #### http://www.cjsf.ca/
 ------
 
-<img src='./screenshots/home.png' height='320' width='180' /> <img src='./screenshots/favorites.png' height='320' width='180' /> <img src='./screenshots/schedule.png' height='320' width='180' /> <img src='./screenshots/about.png' height='320' width='180' /> <img src='./screenshots/actionsheet.png' height='320' width='180' /> <img src='./screenshots/toastadd.png' height='320' width='180' /> <img src='./screenshots/info.png' height='320' width='180' /> <img src='./screenshots/remove.png' height='320' width='180' /> <img src='./screenshots/toastremove.png' height='320' width='180' />
+<img src='./screenshots/home.png' height='480' width='270' /> <img src='./screenshots/favorites.png' height='480' width='270' /> <img src='./screenshots/schedule.png' height='480' width='270' /> <img src='./screenshots/about.png' height='480' width='270' /> <img src='./screenshots/actionsheet.png' height='480' width='270' /> <img src='./screenshots/toastadd.png' height='480' width='270' /> <img src='./screenshots/info.png' height='480' width='270' /> <img src='./screenshots/remove.png' height='480' width='270' /> <img src='./screenshots/toastremove.png' height='480' width='270' />
 
 #### How to run:
 ------
